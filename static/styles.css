@@ -13,3 +13,48 @@
 .max-h-12 {
   max-height: 3rem;
 }
+
+.ff-conv-druk {
+  font-family: 'Conv_Druk Cond Super';
+}
+
+.fz-250 {
+  font-size: 250px;
+}
+
+.lh-08 {
+  line-height: 0.8;
+}
+
+.bg-green-electric {
+  background-color: #2CF10C;
+}
+
+.bg-pink-electric {
+  background-color: #FF39BC;
+}
+
+.rounded-24 {
+  border-radius: 24px;
+}
+
+.btn-floting {
+  right: 230px;
+  bottom: 280px;
+}
+
+.right-10 {
+  right: 10px;
+}
+
+.right-50 {
+  right: 50px;
+}
+
+.bottom-30 {
+  bottom: 30px;
+}
+
+.top-60 {
+  top: 60px;
+}
