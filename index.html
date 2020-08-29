@@ -79,39 +79,9 @@
 </div>
 
 <main>
-  <section class="h-screen flex flex-col bg-black text-white">
-    <div class="h-full overflow-auto p-10 sm:p-6">
-      <div class="flex">
-        <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12">
-          <img class="w-full" src="./static/img/bot.png" alt="">
-        </div>
-        <div class="flex flex-col max-w-sm items-start">
-          <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">The year is 2020.</span>
-        </div>
-      </div>
-      <div class="flex justify-end">
-        <div class="flex flex-col max-w-sm items-end">
-          <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">ok...</span>
-        </div>
-        <div class="ml-3 min-w-12 min-h-12 max-w-12 max-h-12">
-          <span class="w-full h-full bg-white items-center flex text-black justify-center rounded-full font-bold">U</span>
-        </div>
-      </div>
-      <div class="flex">
-        <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12">
-          <img class="w-full" src="./static/img/bot.png" alt="">
-        </div>
-        <div class="flex flex-col max-w-sm items-start">
-          <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">We spend endless hours falling down Internet rabbit holes. Caught in a stream of newsletters, podcasts, and Twitter threads, we surf the web, jumping from thought to thought, tab to tab, hoping for an intellectual breakthrough, exhilarated, but exhausted.</span>
-          <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">We spend endless hours</span>
-        </div>
-      </div>
-    </div>
-    <div class="m-10 border border-white border-opacity-25 rounded-lg flex">
-      <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-25 appearance-none leading-normal" type="text" placeholder="Message Startupy">
-      <span class="whitespace-no-wrap p-3 text-white text-opacity-25">PRESS ENTER</span>
-    </div>
-  </section>
+
+  {% include 'chat.html' %}
+
   <section class="relative h-screen p-6 bg-green-electric text-black">
     <img class="absolute bottom-0" src="/static/img/bk-1.jpg" alt="">
     <img class="absolute right-50 bottom-30" src="/static/img/bk-2.jpg" alt="">
