@@ -18,6 +18,10 @@
   font-family: 'Conv_Druk Cond Super';
 }
 
+.ff-conv-PxGrotesk {
+	font-family: 'Conv_PxGrotesk-OIL';
+}
+
 .fz-250 {
   font-size: 250px;
 }
@@ -32,6 +36,10 @@
 
 .bg-pink-electric {
   background-color: #FF39BC;
+}
+
+.text-blue-electric {
+  color: #0C3EF1;
 }
 
 .rounded-24 {
@@ -57,4 +65,8 @@
 
 .top-60 {
   top: 60px;
+}
+
+.bg-modal {
+  background-image: url(../static/img/bg-modal.jpg);
 }
