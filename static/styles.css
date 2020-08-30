@@ -22,6 +22,22 @@
 	font-family: 'Conv_PxGrotesk-OIL';
 }
 
+.ff-conv-ConcordeBQ {
+	font-family: 'Conv_ConcordeBQ-Regular';
+}
+
+.ff-mono-bold {
+	font-family: 'SF Mono Bold';
+}
+
+.ff-mono-regular {
+	font-family: 'SF Mono Regular';
+}
+
+.ff-mono-light {
+	font-family: 'SF Mono Light';
+}
+
 .fz-250 {
   font-size: 250px;
 }
@@ -69,4 +85,10 @@
 
 .bg-modal {
   background-image: url(../static/img/bg-modal.jpg);
+  background-size: 100% 100%;
+}
+
+.home-banner {
+  background-image: url(../static/img/banner.jpg);
+  min-height: 200px;
 }

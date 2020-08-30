@@ -1,5 +1,13 @@
 body,html {
-  overflow: hidden;
+  // overflow: hidden;
+  // height: 100%;
+  width: 100%;
+}
+
+.animations-container {
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
 }
@@ -15,7 +23,6 @@ body,html {
   transform: translate(-50%,-50%) scale(0,0);
   height: 800%;
   width: 800%;
-  // background: #2CF10C;
   z-index: 100;
   border-radius: 100%;
   // box-shadow: 0 0 calc(100% - 0) calc(100% - 0) #2CF10C;
