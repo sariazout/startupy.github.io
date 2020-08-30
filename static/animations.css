@@ -1,5 +1,35 @@
-.nvisible {
-  display: none;
+.chat-container .item-text {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.chat-container .item-text.inactive {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0px);
+}
+.chat-container .item-icon {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scale(0, 0);
+  overflow: hidden;
+}
+.chat-container .item-icon.inactive {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scale(1, 1);
+  overflow: hidden;
+}
+.chat-container .enter-text {
+  color: #69da3a !important;
 }
 
 /*# sourceMappingURL=animations.css.map */

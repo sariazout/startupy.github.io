@@ -1,5 +1,43 @@
-img {
-  &.round--icon {
-    border-radius: 100%;
-  }
+.chat-container {
+    
+    .item-text {
+      transition-property: all;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0.2s;
+      opacity: 0;
+      transform: translateY(20px);
+
+      &.inactive { 
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0.2s;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    .item-icon {
+      transition-property: all;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      transform: scale(0,0);
+      overflow: hidden;
+
+      &.inactive { 
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transform: scale(1,1);
+        overflow: hidden;
+      }
+    }
+
+    .enter-text {
+      color: #69da3a!important;
+    }
+
+  
+
 }

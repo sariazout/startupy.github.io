@@ -1,33 +1,32 @@
-<section class="h-screen flex flex-col bg-black text-white nvisible">
+<section class="h-screen flex flex-col bg-black text-white chat-container">
   <div class="h-full overflow-auto p-10 sm:p-6">
-    <div class="flex visible">
-      <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12">
+    <div class="flex items" id="toView">
+      <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12 item-icon">
         <img class="w-full rounded-full" src="./static/img/bot.png" alt="">
       </div>
       <div class="flex flex-col max-w-sm items-start">
-        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">The year is 2020.</span>
+        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1 item-text">The year is 2020.</span>
       </div>
     </div>
-    <div class="flex justify-end visible">
-      <div class="flex flex-col max-w-sm items-end">
-        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">I'm writing a lot of text so you would be fooled by me, but this isn't bad</span>
+    <div class="flex justify-end items" id="userAnswer">
+      <div class="flex flex-col max-w-sm items-end item-text">
+        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1" id="replaceText">I'm writing a lot of text so you would be fooled by me, but this isn't bad</span>
       </div>
-      <div class="ml-3 min-w-12 min-h-12 max-w-12 max-h-12">
+      <div class="ml-3 min-w-12 min-h-12 max-w-12 max-h-12 item-icon">
         <span class="w-full h-full bg-white items-center flex text-black justify-center rounded-full font-bold">U</span>
       </div>
     </div>
-    <div class="flex visible">
-      <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12">
+    <div class="flex items" id="autoFilling">
+      <div class="mr-3 min-w-12 min-h-12 max-w-12 max-h-12 item-icon">
         <img class="w-full rounded-full" src="./static/img/bot.png" alt="">
       </div>
-      <div class="flex flex-col max-w-sm items-start">
-        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">We spend endless hours falling down Internet rabbit holes. Caught in a stream of newsletters, podcasts, and Twitter threads, we surf the web, jumping from thought to thought, tab to tab, hoping for an intellectual breakthrough, exhilarated, but exhausted.</span>
-        <span class="bg-white bg-opacity-25 rounded-lg p-3 mb-1">We spend endless hours</span>
+      <div class="flex flex-col max-w-sm items-start" id="fillingParagraphs">
+        
       </div>
     </div>
   </div>
   <div class="m-10 border border-white border-opacity-25 rounded-lg flex">
-    <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-25 appearance-none leading-normal" type="text" placeholder="Message Startupy">
-    <span class="whitespace-no-wrap p-3 text-white text-opacity-25">PRESS ENTER</span>
+    <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-25 appearance-none leading-normal" id="messageInput" type="text" placeholder="Message Startupy">
+    <span class="whitespace-no-wrap p-3 text-white text-opacity-25 text-button">PRESS ENTER</span>
   </div>
 </section>
