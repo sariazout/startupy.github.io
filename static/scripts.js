@@ -2,6 +2,8 @@ window.onload = function() {
   var element = document.getElementById('toView');
   var userElement = document.getElementById('userAnswer');
   var fillPar = document.getElementById('fillingParagraphs');
+  var space = document.getElementById('space-canvas');
+  var shadow = document.getElementById('green-shadow');
   var replaceElement = document.getElementById('replaceText');
   var fillingElement = document.getElementById('autoFilling');
   var inputText = document.getElementById('messageInput');
@@ -76,6 +78,29 @@ window.onload = function() {
             }, 500);
           }
         }, 500);
+
+        setTimeout(function() {
+          shadow.classList.add('open-circle');
+        }, 1000)
+        setTimeout(function() {
+          let gif1 = document.getElementById('gif1');
+          let gif2 = document.getElementById('gif2');
+          let gif3 = document.getElementById('gif3');
+          let window = document.getElementById('window');
+          space.classList.add('open-space');
+          setTimeout(function() {
+            gif1.classList.add('actived');
+          }, 500)
+          setTimeout(function() {
+            gif2.classList.add('actived');
+          }, 700)
+          setTimeout(function() {
+            gif3.classList.add('actived');
+          }, 600)
+          setTimeout(function() {
+            window.classList.add('actived');
+          }, 800)
+        }, 2000)
       } else {
         return false;
       }

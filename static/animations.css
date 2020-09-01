@@ -10,6 +10,88 @@ body, html {
   width: 100%;
 }
 
+main {
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+main.active-main {
+  display: block;
+}
+
+#space-canvas {
+  position: absolute;
+  transform: translateX(100%);
+}
+#space-canvas.open-space {
+  transform: translateX(0);
+}
+#space-canvas #gif1, #space-canvas #gif2, #space-canvas #gif3, #space-canvas #window {
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+#space-canvas #gif1.actived, #space-canvas #gif2.actived, #space-canvas #gif3.actived, #space-canvas #window.actived {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  opacity: 1;
+}
+#space-canvas #window #text1 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+#space-canvas #window #text2 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 0;
+  transform: translateX(30px);
+}
+#space-canvas #window #button1 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  opacity: 0;
+  transform: rotate(0);
+}
+#space-canvas #window.actived #text1 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateX(0);
+}
+#space-canvas #window.actived #text2 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.7s;
+  opacity: 1;
+  transform: translateX(0);
+}
+#space-canvas #window.actived #button1 {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.7s;
+  opacity: 1;
+  transform: rotate(45deg);
+}
+#space-canvas #gif1 {
+  animation-name: movement1;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+#space-canvas #gif2 {
+  animation-name: movement2;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+#space-canvas #gif3 {
+  animation-name: movement3;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
 #green-shadow {
   transition-property: all;
   transition-duration: 0.5s;
@@ -31,6 +113,10 @@ body, html {
   transition-timing-function: ease-in-out;
   transition-delay: 0.5s;
   transform: translate(-50%, -50%) scale(1, 1);
+}
+
+footer {
+  display: none;
 }
 
 #space-canvas {
@@ -73,6 +159,63 @@ body, html {
 }
 .chat-container .enter-text {
   color: #69da3a !important;
+}
+
+@keyframes movement1 {
+  0% {
+    left: 0;
+    bottom: 0;
+  }
+  25% {
+    left: 70;
+    bottom: 200px;
+  }
+  50% {
+    left: 150px;
+    bottom: 150px;
+  }
+  75% {
+    left: 20;
+    bottom: 50px;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+  }
+}
+@keyframes movement2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-90, -300);
+  }
+  50% {
+    transform: translate(-230px, -200px);
+  }
+  75% {
+    transform: translate(-150, -150);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes movement3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-50, 150);
+  }
+  50% {
+    transform: translate(-170px, 250px);
+  }
+  75% {
+    transform: translate(-70, 90);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /*# sourceMappingURL=animations.css.map */

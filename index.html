@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<header class="hidden">
+<!-- <header class="hidden">
   <div>
     <a href=""><h1>logo</h1></a>
     <div>
@@ -16,9 +16,9 @@
       <a href="">Login</a>
     </div>
   </div>
-</header>
+</header> -->
 
-<div class="hidden">
+<!-- <div class="hidden">
   <div>
     <img src="" alt="">
     <div>  
@@ -76,16 +76,15 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<main>
+<section class="animations-container">
+  {% include 'chat.html' %}
+  {% include 'shadow.html' %}
+  {% include 'space.html' %}
+</section>
 
-  <section class="animations-container">
-    {% include 'chat.html' %}
-    {% include 'shadow.html' %}
-    {% include 'space.html' %}
-  </section>
-
+<main id="main-content">
   
   <section class="relative h-screen p-6 bg-green-electric text-black bg-modal flex items-center justify-center">
     <div class="bg-white p-8 max-w-lg">
