@@ -115,5 +115,17 @@ window.onload = function() {
     }
   };
 
+  let bgbutton = document.getElementById('bgbutton');
+  bgbutton.addEventListener('click',showBg);
+
+  function showBg() {
+    let bgoverlay = document.getElementById('bg-colors');
+    bgoverlay.classList.add('actived');
+    setTimeout(function() {
+      let main = document.getElementById('main-content');
+      main.classList.add('active-main');
+    }, 800)
+  }
+
   
 }

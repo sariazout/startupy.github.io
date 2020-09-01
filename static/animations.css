@@ -53,6 +53,7 @@ main.active-main {
   transition-property: all;
   transition-duration: 0.3s;
   opacity: 0;
+  z-index: 20;
   transform: rotate(0);
 }
 #space-canvas #window.actived #text1 {
@@ -125,6 +126,29 @@ footer {
   top: 0;
   z-index: 200;
   width: 100%;
+}
+
+#bg-colors {
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  background: url(img/modal-fondo.png) no-repeat left top;
+  background-size: cover;
+  border-radius: 0 0 100% 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  transform: translatex(calc(-100%));
+}
+#bg-colors.actived {
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  border-radius: 0 0 0 0;
+  transform: translatex(0);
 }
 
 .chat-container .item-text {
