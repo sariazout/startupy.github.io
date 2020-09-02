@@ -1,15 +1,17 @@
-window.onload = function() {
-  var element = document.getElementById('toView');
-  var userElement = document.getElementById('userAnswer');
-  var fillPar = document.getElementById('fillingParagraphs');
-  var space = document.getElementById('space-canvas');
-  var shadow = document.getElementById('green-shadow');
-  var replaceElement = document.getElementById('replaceText');
-  var fillingElement = document.getElementById('autoFilling');
-  var inputText = document.getElementById('messageInput');
-  var changer = document.getElementsByClassName('text-button');
-  var valueText = "";
-  var strings = ['We spend endless hours falling down Internet rabbit holes.','Caught in a stream of newsletters, podcasts, and Twitter threads, we surf the web','jumping from thought to thought, tab to tab, hoping for an intellectual','breakthrough, exhilarated, but exhausted']
+var element = document.getElementById('toView');
+var userElement = document.getElementById('userAnswer');
+var fillPar = document.getElementById('fillingParagraphs');
+var space = document.getElementById('space-canvas');
+var shadow = document.getElementById('green-shadow');
+var replaceElement = document.getElementById('replaceText');
+var fillingElement = document.getElementById('autoFilling');
+var inputText = document.getElementById('messageInput');
+var changer = document.getElementsByClassName('text-button');
+var valueText = "";
+var strings = ['We spend endless hours falling down Internet rabbit holes.','Caught in a stream of newsletters, podcasts, and Twitter threads, we surf the web','jumping from thought to thought, tab to tab, hoping for an intellectual','breakthrough, exhilarated, but exhausted']
+
+window.onload = async function() {
+
   element.classList.add('inactive');
 
   let icons = element.getElementsByClassName('item-icon');
@@ -17,18 +19,16 @@ window.onload = function() {
   console.log('this element list; ',messages.length);
 
   for(let i = 0; i < icons.length; i++) {
-    setTimeout(function(){ 
+      await sleep(100);
       icons[i].classList.add('inactive');
-     }, 100);
   }
 
   for(let i = 0; i < messages.length; i++) {
-    setTimeout(function(){ 
+      await sleep(300);
       messages[i].classList.add('inactive');
-     }, 300);
   }
 
-  inputText.onkeyup = function(event) {
+  inputText.onkeyup = async function(event) {
     valueText = event.target.value;
 
     if (event.key === 'Enter' || event.keyCode === 13) {
@@ -45,24 +45,21 @@ window.onload = function() {
         console.log('this element list; ',messages.length);
 
         for(let i = 0; i < icons.length; i++) {
-          setTimeout(function(){ 
-            icons[i].classList.add('inactive');
-          }, 100);
+          await sleep(100);
+          icons[i].classList.add('inactive');
         }
 
         for(let i = 0; i < messages.length; i++) {
-          setTimeout(function(){ 
-            messages[i].classList.add('inactive');
-          }, 300);
+          await sleep(100);
+          messages[i].classList.add('inactive');
         }
 
-        setTimeout(function(){ 
+        setTimeout(async function(){ 
           fillingElement.classList.add('inactive');
           let iconfilling = fillingElement.getElementsByClassName('item-icon');
           for(let i = 0; i < iconfilling.length; i++) {
-            setTimeout(function(){ 
-              iconfilling[i].classList.add('inactive');
-            }, 100);
+            await sleep(100);
+            iconfilling[i].classList.add('inactive');
           }
           for(let i = 0; i < strings.length; i++) {
             let spanning = document.createElement('span');
@@ -72,35 +69,30 @@ window.onload = function() {
             spanning.appendChild(textNode);
             fillPar.appendChild(spanning);
             let elementUsed = document.getElementById('element'+i);
-            setTimeout(function() {
-              console.log('primaries');
-              elementUsed.classList.add('inactive');
-            }, 500);
+            await sleep(500);
+            elementUsed.classList.add('inactive');
           }
         }, 500);
 
-        setTimeout(function() {
-          shadow.classList.add('open-circle');
-        }, 1000)
-        setTimeout(function() {
+        await sleep(strings.length * 1000);
+
+        
+        shadow.classList.add('open-circle');
+
+        await sleep(800);
           let gif1 = document.getElementById('gif1');
           let gif2 = document.getElementById('gif2');
           let gif3 = document.getElementById('gif3');
           let window = document.getElementById('window');
           space.classList.add('open-space');
-          setTimeout(function() {
+          await sleep(500);
             gif1.classList.add('actived');
-          }, 500)
-          setTimeout(function() {
+          await sleep(700);
             gif2.classList.add('actived');
-          }, 700)
-          setTimeout(function() {
+          await sleep(600);
             gif3.classList.add('actived');
-          }, 600)
-          setTimeout(function() {
+          await sleep(800);
             window.classList.add('actived');
-          }, 800)
-        }, 2000)
       } else {
         return false;
       }
@@ -123,9 +115,15 @@ window.onload = function() {
     bgoverlay.classList.add('actived');
     setTimeout(function() {
       let main = document.getElementById('main-content');
+      let bod = document.getElementsByTagName('body')[0];
       main.classList.add('active-main');
+      bod.classList.add('landing-active');
     }, 800)
   }
 
   
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
