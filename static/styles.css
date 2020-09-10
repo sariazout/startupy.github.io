@@ -14,6 +14,10 @@
   max-height: 3rem;
 }
 
+.h-100 {
+  height: 100%;
+}
+
 .ff-conv-druk {
   font-family: 'Conv_Druk Cond Super';
 }
@@ -67,8 +71,8 @@
 }
 
 .btn-floting {
-  right: 50px;
-  bottom: 100px;
+  right: 100px;
+  bottom: 110px;
 }
 
 .right-10 {
