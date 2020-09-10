@@ -62,8 +62,8 @@
   border-radius: 24px;
 }
 
-.fz-70 {
-  font-size: 70px;
+.fz-140 {
+  font-size: 140px;
 }
 
 .rounded-10 {
@@ -72,7 +72,7 @@
 
 .btn-floting {
   right: 100px;
-  bottom: 110px;
+  bottom: 190px;
 }
 
 .right-10 {
