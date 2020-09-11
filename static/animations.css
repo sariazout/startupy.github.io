@@ -4,7 +4,7 @@ body, html {
   width: 100%;
 }
 body.landing-active, html.landing-active {
-  overflow: auto;
+  overflow: visible;
 }
 
 .animations-container {
@@ -36,15 +36,26 @@ main.active-main {
 #space-canvas.open-space {
   transform: translateX(0);
 }
-#space-canvas #gif1, #space-canvas #gif2, #space-canvas #gif3, #space-canvas #window {
+#space-canvas #gif1, #space-canvas #gif2, #space-canvas #gif3 {
   transition-property: all;
   transition-duration: 0.3s;
   opacity: 0;
 }
-#space-canvas #gif1.actived, #space-canvas #gif2.actived, #space-canvas #gif3.actived, #space-canvas #window.actived {
+#space-canvas #gif1.actived, #space-canvas #gif2.actived, #space-canvas #gif3.actived {
   transition-property: all;
   transition-duration: 0.3s;
   transition-delay: 0.3s;
+  opacity: 1;
+}
+#space-canvas #window {
+  opacity: 0;
+  position: absolute;
+}
+#space-canvas #windowheader {
+  cursor: move;
+  z-index: 100;
+}
+#space-canvas #window.actived {
   opacity: 1;
 }
 #space-canvas #window #text1 {

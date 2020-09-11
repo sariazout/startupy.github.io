@@ -1,3 +1,7 @@
+html,body {
+  scroll-behavior: smooth;
+}
+
 .min-w-12 {
   min-width: 3rem;
 }
@@ -51,7 +55,16 @@
 }
 
 .bg-pink-electric {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
   background-color: #FF39BC;
+}
+
+.bg-pink-electric:hover {
+  background: #a21a74;
+  color: #fff;
+  transform: rotate(-55deg);
 }
 
 .text-blue-electric {
@@ -129,4 +142,20 @@
   .rounded-lg-24 {
     border-radius: 24px;
   }
+}
+
+#menuSide {
+  transform: translateY(0);
+}
+
+.text-container-landing {
+  position: relative;
+  min-height: 20px;
+  overflow: hidden;
+}
+
+#ideals {
+  z-index: 100;
+  background: black;
+  position: relative;
 }

@@ -4,7 +4,7 @@ body,html {
   width: 100%;
 
   &.landing-active {
-    overflow: auto;
+    overflow: visible;
   }
 }
 
@@ -41,7 +41,7 @@ main {
     transform: translateX(0);
   }
 
-  #gif1, #gif2, #gif3, #window {
+  #gif1, #gif2, #gif3 {
     transition-property: all;
     transition-duration: 0.3s;
     opacity: 0;
@@ -54,8 +54,22 @@ main {
     }
   }
 
-  #window {
 
+
+  #window {
+    opacity: 0;
+    position: absolute;
+
+    &header {
+      cursor: move;
+      z-index: 100;
+    }
+
+
+    &.actived {
+      opacity: 1;
+
+    }
 
     #text1 {
       transition-property: all;
