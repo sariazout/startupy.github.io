@@ -193,7 +193,7 @@ async function sendMessage() {
     }
     for (let i = 0; i < strings.length; i++) {
       let spanning = document.createElement('span');
-      spanning.setAttribute('class', 'bg-white bg-opacity-25 rounded-lg p-3 mb-1 item-text');
+      spanning.setAttribute('class', 'bg-white bg-opacity-25 rounded-lg p-3 mb-2 item-text');
       spanning.setAttribute('id', 'element' + i);
       let textNode = document.createTextNode(strings[i]);
       spanning.appendChild(textNode);
