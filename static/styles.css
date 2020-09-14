@@ -159,3 +159,7 @@ html,body {
   background: black;
   position: relative;
 }
+
+.images-over {
+  z-index: 100;
+}

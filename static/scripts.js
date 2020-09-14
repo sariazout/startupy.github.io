@@ -14,17 +14,49 @@ var problem = document.getElementById('land-container');
 var firstDistance = problem.scrollTop;
 var scrolls = document.getElementsByClassName('scroller');
 var scrolled = document.getElementById('menuSide');
+var sols = document.getElementById('solution');
+var linkeds = document.getElementsByClassName('linksside');
 
 console.log(firstDistance);
 
 window.onscroll = function () {
   let topScroll = window.scrollY;
   let secondDistance = problem.offsetTop;
+  let thirdDistance = sols.offsetTop;
   if(topScroll >= secondDistance) {
     console.log(topScroll);
     console.log(secondDistance);
     let newDistance = topScroll - secondDistance;
     scrolled.style.transform = "translateY(" + newDistance + "px)";
+    if(topScroll >= thirdDistance) {
+      for(let i = 0; i < linkeds.length; i++) {
+        var point = linkeds[i].getElementsByTagName('span')[0];
+        var linkInside = linkeds[i].getElementsByTagName('a')[0];
+        point.classList.remove('bg-white');
+        point.classList.add('bg-black');
+        linkInside.classList.add('text-opacity-50');
+      }
+      var usable = document.getElementById('secondLink');
+      var point2 = usable.getElementsByTagName('span')[0];
+      var linkInside2 = usable.getElementsByTagName('a')[0];
+      point2.classList.remove('bg-black');
+      linkInside2.classList.remove('text-opacity-50');
+      point2.classList.add('bg-white');
+    } else {
+      for(let i = 0; i < linkeds.length; i++) {
+        var point = linkeds[i].getElementsByTagName('span')[0];
+        var linkInside = linkeds[i].getElementsByTagName('a')[0];
+        point.classList.remove('bg-white');
+        point.classList.add('bg-black');
+        linkInside.classList.add('text-opacity-50');
+      }
+      var usable = document.getElementById('firstLink');
+      var point2 = usable.getElementsByTagName('span')[0];
+      var linkInside2 = usable.getElementsByTagName('a')[0];
+      point2.classList.remove('bg-black');
+      linkInside2.classList.remove('text-opacity-50');
+      point2.classList.add('bg-white');
+    }
   } else {  
     scrolled.style.transform = "translateY(0px)";
   }
