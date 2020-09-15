@@ -331,12 +331,12 @@ async function sendMessage() {
       spanning.appendChild(textNode);
       fillPar.appendChild(spanning);
       let elementUsed = document.getElementById('element' + i);
-      await sleep(1500);
+      await sleep(2000);
       elementUsed.classList.add('inactive');
     }
   }, 500);
 
-  await sleep(strings.length * 2200);
+  await sleep(strings.length * 3000);
 
 
   shadow.classList.add('open-circle');

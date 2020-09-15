@@ -62,7 +62,7 @@ html,body {
 }
 
 .bg-pink-electric:hover {
-  background: #a21a74;
+  /* background: #a21a74; */
   color: #fff;
   transform: rotate(-55deg);
 }
