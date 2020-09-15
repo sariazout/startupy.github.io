@@ -15,8 +15,10 @@ var firstDistance = problem.scrollTop;
 var scrolls = document.getElementsByClassName('scroller');
 var scrolled = document.getElementById('menuSide');
 var sols = document.getElementById('solution');
+var idels = document.getElementById('ideals');
 var linkeds = document.getElementsByClassName('linksside');
 var linksItems = document.getElementsByClassName('sideMenuItem');
+var sideMenuAlt = document.getElementById('sideMenuAlt');
 
 console.log(firstDistance);
 
@@ -25,8 +27,6 @@ window.onscroll = function () {
   let secondDistance = problem.offsetTop;
   let thirdDistance = sols.offsetTop;
   if(topScroll >= secondDistance) {
-    console.log(topScroll);
-    console.log(secondDistance);
     let newDistance = topScroll - secondDistance;
     scrolled.style.transform = "translateY(" + newDistance + "px)";
     if(topScroll >= thirdDistance) {
@@ -60,6 +60,61 @@ window.onscroll = function () {
     }
   } else {  
     scrolled.style.transform = "translateY(0px)";
+  }
+
+  let problems = problem.offsetTop;
+  let solutions = idels.offsetTop + problems;
+
+  if(topScroll >= solutions) {
+    let thisDistance = topScroll - solutions;
+    let inf = document.getElementById('infor').offsetTop;
+    let abun = document.getElementById('abundance').offsetTop;
+    let think = document.getElementById('think').offsetTop;
+    let an = document.getElementById('analysis').offsetTop;
+    console.log('this is the distances',inf,' ',abun,' ',think,' ',an);
+    sideMenuAlt.style.transform = "translateY(" + thisDistance + "px)";
+    for(let i = 0; i < linksItems.length; i++) {
+      let point = linksItems[i].getElementsByTagName('span')[0];
+      let linkInside = linksItems[i].getElementsByTagName('a')[0];
+      point.classList.remove('bg-white');
+      point.classList.add('bg-black');
+      linkInside.classList.add('text-opacity-50');
+      if(thisDistance < abun){
+        let elmt = document.getElementById('placeinfo');
+        let spanelm = elmt.getElementsByTagName('span')[0];
+        let linkelm = elmt.getElementsByTagName('a')[0];
+        spanelm.classList.add('bg-white');
+        spanelm.classList.remove('bg-black');
+        linkelm.classList.remove('text-opacity-50');
+        console.log('1')
+      } else if(thisDistance < think) {
+        let elmt = document.getElementById('placeabun');
+        let spanelm = elmt.getElementsByTagName('span')[0];
+        let linkelm = elmt.getElementsByTagName('a')[0];
+        spanelm.classList.add('bg-white');
+        spanelm.classList.remove('bg-black');
+        linkelm.classList.remove('text-opacity-50');
+        console.log('2')
+      } else if(thisDistance < an) {
+        let elmt = document.getElementById('placethink');
+        let spanelm = elmt.getElementsByTagName('span')[0];
+        let linkelm = elmt.getElementsByTagName('a')[0];
+        spanelm.classList.add('bg-white');
+        spanelm.classList.remove('bg-black');
+        linkelm.classList.remove('text-opacity-50');
+        console.log('3')
+      } else if(thisDistance >= an) {
+        let elmt = document.getElementById('placean');
+        let spanelm = elmt.getElementsByTagName('span')[0];
+        let linkelm = elmt.getElementsByTagName('a')[0];
+        spanelm.classList.add('bg-white');
+        spanelm.classList.remove('bg-black');
+        linkelm.classList.remove('text-opacity-50');
+        console.log('4')
+      }
+    }
+  } else {
+    sideMenuAlt.style.transform = "translateY(0)";
   }
 }
 

@@ -148,6 +148,11 @@ html,body {
   transform: translateY(0);
 }
 
+#sideMenuAlt {
+  transform: translateY(0);
+  position: relative;
+}
+
 .text-container-landing {
   position: relative;
   min-height: 20px;
