@@ -9,7 +9,7 @@ var inputText = document.getElementById('messageInput');
 var changer = document.getElementsByClassName('text-button');
 var valueText = "";
 var sendbutton = document.getElementById('sendmessage');
-var strings = ['We spend endless hours falling down Internet rabbit holes.', 'Caught in a stream of newsletters, podcasts, and Twitter threads, we surf the web', 'jumping from thought to thought, tab to tab, hoping for an intellectual', 'breakthrough, exhilarated, but exhausted']
+var strings = ['We spend endless hours falling down Internet rabbit holes.', 'Caught in a stream of newsletters.', 'Podcasts...','And Twitter threads...','We surf the web...', 'Jumping from thought to thought...', 'Tab to tab...', 'Hoping for an intellectual breakthrough', 'Exhilarated, but mentally exhausted...']
 var problem = document.getElementById('land-container');
 var firstDistance = problem.scrollTop;
 var scrolls = document.getElementsByClassName('scroller');
@@ -300,6 +300,8 @@ async function sendMessage() {
   changer[0].classList.remove('enter-text');
   event.target.disabled = true;
   event.target.value = "";
+  inputText.value = "";
+  inputText.setAttribute('placeholder','');
   userElement.classList.add('inactive');
 
   let icons = userElement.getElementsByClassName('item-icon');

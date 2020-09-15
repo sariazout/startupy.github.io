@@ -168,3 +168,7 @@ html,body {
 .images-over {
   z-index: 100;
 }
+
+#sendmessage {
+  cursor: pointer;
+}
