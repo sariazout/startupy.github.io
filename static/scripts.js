@@ -16,6 +16,7 @@ var scrolls = document.getElementsByClassName('scroller');
 var scrolled = document.getElementById('menuSide');
 var sols = document.getElementById('solution');
 var linkeds = document.getElementsByClassName('linksside');
+var linksItems = document.getElementsByClassName('sideMenuItem');
 
 console.log(firstDistance);
 
@@ -134,12 +135,56 @@ window.onload = async function () {
     }, 800)
   }
 
+  for(let i = 0; i < linkeds.length; i++) {
+    linkeds[i].addEventListener('click',function(event) {
+      event.preventDefault();
+      let targets = event.target;
+      let targeteds = targets.getAttribute('href');
+      let targeted = targeteds.substring(1);
+      scrollables(i,targeted)
+    });
+  }
+  
+  for(let i = 0; i < linksItems.length; i++) {
+    linksItems[i].addEventListener('click',function(event) {
+      event.preventDefault();
+      let targets = event.target;
+      let targeteds = targets.getAttribute('href');
+      let targeted = targeteds.substring(1);
+      scrollablesAlt(i,targeted)
+    });
+  }
 
 }
 
 window.onresize = function() {
   firstDistance = problem.offsetTop;
   console.log(firstDistance);
+}
+
+function scrollables(elementIndex,targetedName) {
+  // console.log('this elements are:', linkeds[elementIndex]);
+  let nextDistance = document.getElementById('land-container').offsetTop;
+  let distanceShort = document.getElementById(targetedName).offsetTop;
+  let distance = nextDistance + distanceShort;
+  console.log("distances are:",nextDistance," ",distanceShort);
+  window.scrollTo({
+    top: distance,
+    behavior: 'smooth'
+  });
+}
+
+function scrollablesAlt(elementIndex,targetedName) {
+  // console.log('this elements are:', linkeds[elementIndex]);
+  let nextDistance = document.getElementById('land-container').offsetTop;
+  let distanceMedium = document.getElementById('ideals').offsetTop;
+  let distanceShort = document.getElementById(targetedName).offsetTop;
+  let distance = nextDistance + distanceShort + distanceMedium;
+  console.log("distances are:",nextDistance," ",distanceShort);
+  window.scrollTo({
+    top: distance,
+    behavior: 'smooth'
+  });
 }
 
 function anchorsMovement(event,index,going) {
