@@ -1,0 +1,112 @@
+{% extends "_layout.html" %}
+
+{% block title %}Welcome to Clay v3{% endblock %}
+
+{% block head %}
+{%- endblock %}
+
+{% block content %}
+
+<!-- <header class="hidden">
+  <div>
+    <a href=""><h1>logo</h1></a>
+    <div>
+      <a href="">Our Manifesto</a>
+      <a href="">Join Membership</a>
+      <a href="">Login</a>
+    </div>
+  </div>
+</header> -->
+
+<!-- <div class="hidden">
+  <div>
+    <img src="" alt="">
+    <div>  
+      <div>
+        <i>icon</i>
+        <input type="text" placeholder="Search companies, content, topics, and people">
+      </div>
+      <nav>
+        <ul>
+          <li>Topics</li>
+          <li>companies</li>
+          <li>People</li>
+          <li>imagen</li>
+        </ul>
+      </nav>
+      <div>
+        <ul>
+          <li>Trending Topics</li>
+          <li>Assistive Tech</li>
+          <li>Personalized Finance</li>
+          <li>Safety Tech</li>
+          <li>Future of Warehousing</li>
+          <li>Sustainable Brands</li>
+        </ul>
+        <ul>
+          <li>New Topics</li>
+          <li>Future of Dating</li>
+          <li>Prosumer</li>
+          <li>AR/VR Startups</li>
+          <li>Wearables</li>
+          <li>Something Else</li>
+        </ul>
+        <div>
+          <span>Community Stats</span>
+          <div>
+            <p>grafico1</p>
+            <p>grafico1</p>
+            <p>grafico1</p>
+          </div>
+        </div>
+        <div>
+          <span>Mood</span>
+          <div>
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <i>icon nav</i>
+      </div>
+      <div>
+        <i>close</i>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<section class="animations-container">
+  {% include 'chat.html' %}
+  {% include 'shadow.html' %}
+  {% include 'space.html' %}
+</section>
+
+<main id="main-content">
+  
+  <section class="relative h-screen p-6 text-black bg-modal flex items-center justify-center">
+    <div class="bg-white p-8 max-w-lg xl:max-w-2xl">
+      <p class="font-bold text-xl leading-6 md:text-2xl md:leading-8 xl:text-4xl xl:leading-10"><span class="ff-conv-PxGrotesk text-blue-electric">Startupy</span> is a living, breathing, and surprisingly delightful place to fall down the Internet rabbit hole and stay up to speed on the pulse of startup culture. With <span class="ff-conv-PxGrotesk text-blue-electric">Startupy</span>, we’re not just creating a database, but an infrastructure for a new type of knowledge exchange.</p>
+      <div class="mt-4 md:mt-10">
+        <span class="font-bold xl:text-xl">Join Our Waitlist</span>
+        <div class="mt-3 bg-black px-4 py-2 text-white flex items-center">
+          <span class="font-bold xl:text-xl">Email</span>
+          <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-50 appearance-none leading-normal xl:text-xl" type="email" placeholder="you@mail.com">
+          <button class="opacity-75 xl:text-xl">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% include 'landing.html' %}
+
+</main>
+
+{% include 'footer.html' %}
+
+{%- endblock %}
+
+{% block scripts %}
+{%- endblock %}
