@@ -156,7 +156,7 @@ footer {
 
 #bg-colors {
   transition-property: all;
-  transition-duration: 0.5s;
+  transition-duration: 2.5s;
   transition-timing-function: ease-in-out;
   background: url(img/modal-fondo.png) no-repeat left top;
   background-size: cover;
@@ -171,7 +171,7 @@ footer {
 }
 #bg-colors.actived {
   animation-name: movement4;
-  animation-duration: 0.5s;
+  animation-duration: 2.5s;
   animation-fill-mode: forwards;
 }
 

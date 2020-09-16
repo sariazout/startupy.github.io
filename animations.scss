@@ -184,7 +184,7 @@ footer {
 
 #bg-colors {
   transition-property: all;
-  transition-duration: 0.5s;
+  transition-duration: 1.5s;
   transition-timing-function: ease-in-out;
   background: url(img/modal-fondo.png) no-repeat left top;
   background-size: cover;
@@ -199,7 +199,7 @@ footer {
 
   &.actived {
     animation-name: movement4;
-    animation-duration: 0.5s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
   }
 }
@@ -274,6 +274,6 @@ footer {
 
 @keyframes movement4 {
   0%   {border-radius: 0 0 100% 100%; transform: translatex(calc(-100%));}
-  40%  {border-radius: 0 0 100% 30%; transform: translatex(0);}
+  60%  {border-radius: 0 0 100% 50%; transform: translatex(0);}
   100% {border-radius: 0 0 0 0; transform: translatex(0);}
 }
