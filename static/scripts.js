@@ -19,6 +19,7 @@ var idels = document.getElementById('ideals');
 var linkeds = document.getElementsByClassName('linksside');
 var linksItems = document.getElementsByClassName('sideMenuItem');
 var sideMenuAlt = document.getElementById('sideMenuAlt');
+var buttonSubmit = document.getElementById('submitButton');
 
 console.log(firstDistance);
 
@@ -120,6 +121,8 @@ window.onscroll = function () {
 
 
 window.onload = async function () {
+
+  // buttonSubmit.addEventListener('click',insert_value);
 
   dragElement(document.getElementById("window"));
 
@@ -358,3 +361,4 @@ async function sendMessage() {
   await sleep(800);
   window.classList.add('actived');
 }
+
