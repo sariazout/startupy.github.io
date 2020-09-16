@@ -172,3 +172,9 @@ html,body {
 #sendmessage {
   cursor: pointer;
 }
+
+#ideal {
+  background: black;
+  position: relative;
+  z-index: 20;
+}
