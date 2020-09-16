@@ -17,10 +17,31 @@
   <link type="text/plain" rel="author" href="/humans.txt">
   <meta name="generator" content="Clay (https://github.com/lucuma/clay)" />
   {% block head %}{% endblock %}
+  
 </head>
 <body>
   {% block content %}{% endblock %}
   <script src="/static/scripts.js?v=1.0"></script>
   {% block scripts %}{% endblock %}
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.-/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCsLaobdVE3CH7fxFJRD0Rc5Oa6osblBqA",
+      authDomain: "startupy-14c86.firebaseapp.com",
+      databaseURL: "https://startupy-14c86.firebaseio.com",
+      projectId: "startupy-14c86",
+      storageBucket: "startupy-14c86.appspot.com",
+      messagingSenderId: "233793212754",
+      appId: "1:233793212754:web:ac0bd9ec03eea634836a8b"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
