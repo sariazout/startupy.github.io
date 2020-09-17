@@ -169,9 +169,6 @@ html,body {
   z-index: 100;
 }
 
-#sendmessage {
-  cursor: pointer;
-}
 
 #ideal {
   background: black;

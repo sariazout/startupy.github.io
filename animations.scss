@@ -210,7 +210,7 @@ footer {
       transition-property: all;
       transition-duration: 0.3s;
       transition-timing-function: ease-in-out;
-      transition-delay: 0.2s;
+      // transition-delay: 0.2s;
       opacity: 0;
       transform: translateY(20px);
 
@@ -218,7 +218,7 @@ footer {
         transition-property: all;
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;
-        transition-delay: 0.2s;
+        // transition-delay: 0.2s;
         opacity: 1;
         transform: translateY(0px);
       }
@@ -242,6 +242,7 @@ footer {
 
     .enter-text {
       color: #69da3a!important;
+      cursor: pointer;
     }
 
   

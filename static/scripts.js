@@ -20,6 +20,7 @@ var linkeds = document.getElementsByClassName('linksside');
 var linksItems = document.getElementsByClassName('sideMenuItem');
 var sideMenuAlt = document.getElementById('sideMenuAlt');
 var buttonSubmit = document.getElementById('submitButton');
+var db = firebase.firestore();
 
 console.log(firstDistance);
 
@@ -122,7 +123,7 @@ window.onscroll = function () {
 
 window.onload = async function () {
 
-  // buttonSubmit.addEventListener('click',insert_value);
+  buttonSubmit.addEventListener('click', storeData);
 
   dragElement(document.getElementById("window"));
 
@@ -133,12 +134,12 @@ window.onload = async function () {
   console.log('this element list; ', messages.length);
 
   for (let i = 0; i < icons.length; i++) {
-    await sleep(100);
+    // await sleep(100);
     icons[i].classList.add('inactive');
   }
 
   for (let i = 0; i < messages.length; i++) {
-    await sleep(300);
+    // await sleep(100);
     messages[i].classList.add('inactive');
   }
 
@@ -298,11 +299,10 @@ function dragElement(elmnt) {
 
 async function sendMessage() {
   console.log('full grounded');
-  console.log(event.target.value);
+  console.log(inputText.value);
   replaceElement.textContent = inputText.value;
   changer[0].classList.remove('enter-text');
-  event.target.disabled = true;
-  event.target.value = "";
+  inputText.disabled = true;
   inputText.value = "";
   inputText.setAttribute('placeholder','');
   userElement.classList.add('inactive');
@@ -317,7 +317,7 @@ async function sendMessage() {
   }
 
   for (let i = 0; i < messages.length; i++) {
-    await sleep(1000);
+    await sleep(100);
     messages[i].classList.add('inactive');
   }
 
@@ -362,3 +362,19 @@ async function sendMessage() {
   window.classList.add('actived');
 }
 
+function storeData() {
+ let dates = new Date();
+ let emailuse = document.getElementById("email").value;
+ let name = emailuse.match(/^([^@]*)@/)[1];
+ let idate = dates.getTime();
+ db.collection("emails").doc(name).set({
+     id: parseInt(idate),
+     email: emailuse
+ })
+     .then(function () {
+         alert('Your subscription was successful');
+     })
+     .catch(function (error) {
+         console.error("Error writing doc", error);
+     });
+}
