@@ -180,3 +180,31 @@ html,body {
   left: 50%;
   top: 50px;
 }
+
+#sendmessage {
+  cursor: pointer;
+}
+
+.box-error span {
+  color: #FF0000;
+}
+
+.box-filled button {
+  color: #2CF10C;
+}
+
+.box-disabled {
+  background: #F5F5F5;
+}
+
+.box-disabled span,
+.box-disabled input, 
+.box-disabled input::placeholder { 
+  color: black;
+  opacity: 1;
+}
+
+.box-disabled button {
+  opacity: 0.2;
+  color: black;
+}
