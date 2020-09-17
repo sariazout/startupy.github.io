@@ -336,12 +336,16 @@ async function sendMessage() {
       spanning.appendChild(textNode);
       fillPar.appendChild(spanning);
       let elementUsed = document.getElementById('element' + i);
-      await sleep(2000);
+      if(i == 0) {
+        await sleep(0)
+      } else {
+        await sleep(1800);
+      }
       elementUsed.classList.add('inactive');
     }
   }, 500);
 
-  await sleep(strings.length * 3000);
+  await sleep(strings.length * 2500);
 
 
   shadow.classList.add('open-circle');
@@ -350,15 +354,18 @@ async function sendMessage() {
   let gif1 = document.getElementById('gif1');
   let gif2 = document.getElementById('gif2');
   let gif3 = document.getElementById('gif3');
+  let gif4 = document.getElementsByClassName('img4')[0];
   let window = document.getElementById('window');
   space.classList.add('open-space');
-  await sleep(500);
+  await sleep(10);
   gif1.classList.add('actived');
-  await sleep(700);
+  await sleep(10);
+  gif4.classList.add('actived');
+  await sleep(10);
   gif2.classList.add('actived');
-  await sleep(600);
+  await sleep(10);
   gif3.classList.add('actived');
-  await sleep(800);
+  await sleep(10);
   window.classList.add('actived');
 }
 

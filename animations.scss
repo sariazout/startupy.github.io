@@ -41,7 +41,7 @@ main {
     transform: translateX(0);
   }
 
-  #gif1, #gif2, #gif3 {
+  #gif1, #gif2, #gif3, .img4 {
     transition-property: all;
     transition-duration: 0.3s;
     opacity: 0;
@@ -135,6 +135,12 @@ main {
 
   #gif3 {
     animation-name: movement3;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+
+  .img4 {
+    animation-name: movement5;
     animation-duration: 8s;
     animation-iteration-count: infinite;
   }
@@ -277,4 +283,12 @@ footer {
   0%   {border-radius: 0 0 100% 100%; transform: translatex(calc(-100%));}
   60%  {border-radius: 0 0 100% 50%; transform: translatex(0);}
   100% {border-radius: 0 0 0 0; transform: translatex(0);}
+}
+
+@keyframes movement5 {
+  0%   {transform: translate(0,0);}
+  25%  {transform: translate(-20,-80);}
+  50%  {transform: translate(-80px,-180px);}
+  75%  {transform: translate(-20,-70);}
+  100% {transform: translate(0,0);}
 }

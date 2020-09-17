@@ -175,3 +175,8 @@ html,body {
   position: relative;
   z-index: 20;
 }
+
+.img4 {
+  left: 50%;
+  top: 50px;
+}
