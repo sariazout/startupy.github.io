@@ -394,7 +394,8 @@ async function sendMessage() {
   let gif1 = document.getElementById('gif1');
   let gif2 = document.getElementById('gif2');
   let gif3 = document.getElementById('gif3');
-  let gif4 = document.getElementsByClassName('img4')[0];
+  let gif4 = document.getElementById('gif4');
+  let gif5 = document.getElementById('gif5');
   let window = document.getElementById('window');
   space.classList.add('open-space');
   await sleep(10);
@@ -405,6 +406,8 @@ async function sendMessage() {
   gif2.classList.add('actived');
   await sleep(10);
   gif3.classList.add('actived');
+  await sleep(10);
+  gif5.classList.add('actived');
   await sleep(10);
   window.classList.add('actived');
 }
