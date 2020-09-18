@@ -21,6 +21,10 @@ var linksItems = document.getElementsByClassName('sideMenuItem');
 var sideMenuAlt = document.getElementById('sideMenuAlt');
 var buttonSubmit = document.getElementById('submitButton');
 var db = firebase.firestore();
+var emailInput = document.getElementById('email');
+var submitBox = document.getElementById('submitBox');
+var correctMessage = document.getElementById('corr-message');
+var directLink = "";
 
 console.log(firstDistance);
 
@@ -123,11 +127,33 @@ window.onscroll = function () {
 
 window.onload = async function () {
 
+  const queryString = window.location.search;
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  console.log(urlParams)
+  directLink = urlParams.get('direct')
+  console.log(directLink)
+
+  if(directLink === "yes") {
+    console.log('hola');
+    showBgFast('hola');
+  } else {
+    
+  }
+
   buttonSubmit.addEventListener('click', storeData);
 
   dragElement(document.getElementById("window"));
 
   element.classList.add('inactive');
+
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    inputText.disabled = true;
+    sendMessageMobile();
+  }else{
+    // false for not mobile device
+  }
 
   let icons = element.getElementsByClassName('item-icon');
   let messages = element.getElementsByClassName('item-text');
@@ -213,6 +239,20 @@ window.onload = async function () {
       scrollablesAlt(i,targeted)
     });
   }
+
+  emailInput.addEventListener('keypress', function() {
+      let values  = emailInput.value;
+      let expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+      if (!expr.test(values)) {
+          console.log('not value correct');
+          submitBox.classList.remove('box-filled');
+          submitBox.classList.add('box-error');
+      } else {
+        submitBox.classList.remove('box-error');
+        submitBox.classList.add('box-filled');
+        console.log('this is a correct mail');
+      }
+  })
 
 }
 
@@ -370,18 +410,115 @@ async function sendMessage() {
 }
 
 function storeData() {
- let dates = new Date();
- let emailuse = document.getElementById("email").value;
- let name = emailuse.match(/^([^@]*)@/)[1];
- let idate = dates.getTime();
- db.collection("emails").doc(name).set({
-     id: parseInt(idate),
-     email: emailuse
- })
-     .then(function () {
-         alert('Your subscription was successful');
-     })
-     .catch(function (error) {
-         console.error("Error writing doc", error);
-     });
+  let dates = new Date();
+  let emailuse = document.getElementById("email").value;
+  let name = emailuse;
+  let idate = dates.getTime();
+  if(submitBox.classList.contains('box-filled')) {
+    db.collection("emails").doc(name).set({
+      id: parseInt(idate),
+      email: emailuse
+    })
+    .then(function () {
+        submitBox.classList.remove('box-error');
+        submitBox.classList.remove('box-filled');
+        submitBox.classList.add('box-disabled');
+        emailInput.disabled = true;
+        correctMessage.classList.add('actived');
+    })
+    .catch(function (error) {
+        console.error("Error writing doc", error);
+    });
+  } else {
+    console.log('no way chull');
+    return false;
+  }
 }
+
+function showBgFast(elm) {
+  let bgoverlay = document.getElementById('bg-colors');
+  bgoverlay.classList.add('actived-alter');
+  setTimeout(function () {
+    let main = document.getElementById('main-content');
+    let bod = document.getElementsByTagName('body')[0];
+    let htm = document.getElementsByTagName('html')[0];
+    main.classList.add('active-main');
+    bod.classList.add('landing-active');
+    htm.classList.add('landing-active');
+  }, 800)
+}
+
+async function sendMessageMobile() {
+  console.log('full grounded');
+  console.log(inputText.value);
+  replaceElement.textContent = "ok";
+  changer[0].classList.remove('enter-text');
+  inputText.disabled = true;
+  inputText.value = "";
+  inputText.setAttribute('placeholder','');
+  userElement.classList.add('inactive');
+
+  let icons = userElement.getElementsByClassName('item-icon');
+  let messages = userElement.getElementsByClassName('item-text');
+  console.log('this element list; ', messages.length);
+
+  for (let i = 0; i < icons.length; i++) {
+    await sleep(100);
+    icons[i].classList.add('inactive');
+  }
+
+  for (let i = 0; i < messages.length; i++) {
+    await sleep(100);
+    messages[i].classList.add('inactive');
+  }
+
+  setTimeout(async function () {
+    fillingElement.classList.add('inactive');
+    let iconfilling = fillingElement.getElementsByClassName('item-icon');
+    for (let i = 0; i < iconfilling.length; i++) {
+      await sleep(100);
+      iconfilling[i].classList.add('inactive');
+    }
+    for (let i = 0; i < strings.length; i++) {
+      let spanning = document.createElement('span');
+      spanning.setAttribute('class', 'bg-white bg-opacity-25 rounded-lg p-3 mb-2 item-text');
+      spanning.setAttribute('id', 'element' + i);
+      let textNode = document.createTextNode(strings[i]);
+      spanning.appendChild(textNode);
+      fillPar.appendChild(spanning);
+      let elementUsed = document.getElementById('element' + i);
+      if(i == 0) {
+        await sleep(0)
+      } else {
+        await sleep(1800);
+      }
+      elementUsed.classList.add('inactive');
+    }
+  }, 500);
+
+  await sleep(strings.length * 2500);
+
+
+  shadow.classList.add('open-circle');
+
+  await sleep(800);
+  let gif1 = document.getElementById('gif1');
+  let gif2 = document.getElementById('gif2');
+  let gif3 = document.getElementById('gif3');
+  let gif4 = document.getElementsByClassName('img4')[0];
+  let window = document.getElementById('window');
+  space.classList.add('open-space');
+  await sleep(10);
+  gif1.classList.add('actived');
+  await sleep(10);
+  gif4.classList.add('actived');
+  await sleep(10);
+  gif2.classList.add('actived');
+  await sleep(10);
+  gif3.classList.add('actived');
+  await sleep(10);
+  window.classList.add('actived');
+}
+
+
+  

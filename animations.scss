@@ -208,6 +208,13 @@ footer {
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
   }
+
+  &.actived-alter{
+    transition-property: none;
+    transition-duration: 0.1s;
+    transform: translateX(0);
+    border-radius: 0;
+  }
 }
 
 .chat-container {
@@ -291,4 +298,19 @@ footer {
   50%  {transform: translate(-80px,-180px);}
   75%  {transform: translate(-20,-70);}
   100% {transform: translate(0,0);}
+}
+
+#corr-message {
+  transition-property: all;
+  transition-duration: 0.3s;
+  text-align: center;
+  padding: 5px 0;
+  opacity: 0;
+
+  &.actived {
+    transition-property: all;
+    transition-duration: 0.3s;
+    text-align: center;
+    opacity: 1;
+  }
 }

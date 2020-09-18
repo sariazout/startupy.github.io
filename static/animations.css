@@ -179,6 +179,12 @@ footer {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
+#bg-colors.actived-alter {
+  transition-property: none;
+  transition-duration: 0.1s;
+  transform: translateX(0);
+  border-radius: 0;
+}
 
 .chat-container .item-text {
   transition-property: all;
@@ -299,6 +305,19 @@ footer {
   100% {
     transform: translate(0, 0);
   }
+}
+#corr-message {
+  transition-property: all;
+  transition-duration: 0.3s;
+  text-align: center;
+  padding: 5px 0;
+  opacity: 0;
+}
+#corr-message.actived {
+  transition-property: all;
+  transition-duration: 0.3s;
+  text-align: center;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=animations.css.map */
