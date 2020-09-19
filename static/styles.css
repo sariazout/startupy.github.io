@@ -159,6 +159,19 @@ html,body {
   overflow: hidden;
 }
 
+.text-container-landing::before {
+  content: '';
+  background-image: url(../static/img/fondo.png);
+  top: 20px;
+  width: auto;
+  height: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 #ideals {
   z-index: 100;
   background: black;
@@ -207,4 +220,19 @@ html,body {
 .box-disabled button {
   opacity: 0.2;
   color: black;
+}
+
+@media screen and (min-width: 996px) {
+  .text-container-landing::before {
+    content: '';
+    background-image: url(../static/img/fondo.png);
+    top: 20px;
+    width: auto;
+    height: 100%;
+    left: 150px;
+    right: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
