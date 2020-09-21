@@ -195,7 +195,7 @@ html,body {
 }
 
 #sendmessage {
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .box-error span {
@@ -236,3 +236,13 @@ html,body {
     background-repeat: no-repeat;
   }
 }
+
+@media screen and (max-width: 640px) {
+  #inputs_functions {
+    display: none;
+  }
+
+  .text-container-landing::before {
+    display: none;
+  }
+} 

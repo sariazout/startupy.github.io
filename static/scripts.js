@@ -200,6 +200,7 @@ window.onload = async function () {
       } else {
         console.log('building change');
         changer[0].classList.remove('enter-text');
+        sendbutton.removeEventListener('click', sendMessage);
       }
     }
   };
@@ -240,7 +241,7 @@ window.onload = async function () {
     });
   }
 
-  emailInput.addEventListener('keypress', function() {
+  emailInput.addEventListener('input', function() {
       let values  = emailInput.value;
       let expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
       if (!expr.test(values)) {
@@ -342,6 +343,7 @@ async function sendMessage() {
   console.log(inputText.value);
   replaceElement.textContent = inputText.value;
   changer[0].classList.remove('enter-text');
+  sendbutton.removeEventListener('click', sendMessage);
   inputText.disabled = true;
   inputText.value = "";
   inputText.setAttribute('placeholder','');
