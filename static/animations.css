@@ -184,29 +184,34 @@ footer {
 
 #bg-colors {
   transition-property: all;
-  transition-duration: 1.5s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   background: url(img/modal-fondo.png) no-repeat left top;
   background-size: cover;
-  border-radius: 0 0 100% 100%;
+  border-radius: 100%;
   position: absolute;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
   z-index: 300;
-  transform: translatex(calc(-100%));
+  transform: translate(-50%, -50%) scale(0, 0);
+  overflow: hidden;
 }
 #bg-colors.actived {
-  animation-name: movement4;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  border-radius: 0;
+  transform: translate(-50%, -50%) scale(1, 1);
 }
 #bg-colors.actived-alter {
   transition-property: none;
   transition-duration: 0.1s;
-  transform: translateX(0);
+  width: 100%;
+  height: 100%;
   border-radius: 0;
+  transform: translate(-50%, -50%) scale(1, 1);
 }
 
 .chat-container .item-text {
@@ -300,16 +305,12 @@ footer {
 }
 @keyframes movement4 {
   0% {
-    border-radius: 0 0 100% 100%;
-    transform: translatex(calc(-100%));
-  }
-  60% {
-    border-radius: 0 0 100% 50%;
-    transform: translatex(0);
+    border-radius: 100%;
+    transform: translatex(-50%, -50%) scale(0, 0);
   }
   100% {
-    border-radius: 0 0 0 0;
-    transform: translatex(0);
+    border-radius: 0;
+    transform: translatex(-50%, -50%) scale(0, 0);
   }
 }
 @keyframes movement5 {
