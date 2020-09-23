@@ -170,6 +170,8 @@ html,body {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 180;
+  opacity: 0.7;
 }
 
 #ideals {

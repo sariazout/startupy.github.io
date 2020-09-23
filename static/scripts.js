@@ -384,10 +384,11 @@ async function sendMessage() {
         await sleep(1800);
       }
       elementUsed.classList.add('inactive');
+      elementUsed.scrollIntoView();
     }
   }, 500);
 
-  await sleep(strings.length * 2500);
+  await sleep(strings.length * 2200);
 
 
   shadow.classList.add('open-circle');
@@ -498,10 +499,11 @@ async function sendMessageMobile() {
         await sleep(1800);
       }
       elementUsed.classList.add('inactive');
+      elementUsed.scrollIntoView();
     }
   }, 500);
 
-  await sleep(strings.length * 2500);
+  await sleep(strings.length * 2200);
 
 
   shadow.classList.add('open-circle');
