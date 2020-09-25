@@ -393,7 +393,7 @@ async function sendMessage() {
     }
   }, 500);
 
-  await sleep(strings.length * 2200);
+  await sleep(strings.length * 1900);
 
 
   shadow.classList.add('open-circle');
@@ -435,7 +435,9 @@ function storeData() {
         submitBox.classList.remove('box-filled');
         submitBox.classList.add('box-disabled');
         emailInput.disabled = true;
-        correctMessage.classList.add('actived');
+        // correctMessage.classList.add('actived');
+        document.getElementById('submtConfirm').classList.remove('icon-no-show');
+        document.getElementById('submitButton').innerText = "";
     })
     .catch(function (error) {
         console.error("Error writing doc", error);
@@ -508,7 +510,7 @@ async function sendMessageMobile() {
     }
   }, 500);
 
-  await sleep(strings.length * 2200);
+  await sleep(strings.length * 1900);
 
 
   shadow.classList.add('open-circle');
@@ -537,7 +539,7 @@ function Pixel( x, y ) {
   this.y = y;
   this.hue = Math.floor( Math.random() * 360 );
   var direction = Math.random() > 0.5 ? -1 : 1;
-  this.velocity = ( Math.random() * 4 + 20 ) * 0.01 * direction;
+  this.velocity = ( Math.random() * 4 + 20 ) * 0.05 * direction;
 }
 
 Pixel.prototype.update = function() {
