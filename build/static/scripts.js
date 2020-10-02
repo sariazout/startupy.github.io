@@ -130,6 +130,12 @@ window.onscroll = function () {
 
 window.onload = async function () {
 
+  var breaker = document.getElementById('skipmessage');
+  breaker.addEventListener('click',breaking);
+
+  var breaker2 = document.getElementById('skipmessage_mobile');
+  breaker2.addEventListener('click',breaking);
+
   const queryString = window.location.search;
   console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
@@ -348,6 +354,8 @@ async function sendMessage() {
   console.log(inputText.value);
   replaceElement.textContent = inputText.value;
   changer[0].classList.remove('enter-text');
+  changer[0].style.display = "none";
+  document.getElementById('skipmessage').classList.remove('removed');
   sendbutton.removeEventListener('click', sendMessage);
   inputText.disabled = true;
   inputText.value = "";
@@ -458,13 +466,13 @@ function showBgFast(elm) {
     main.classList.add('active-main');
     bod.classList.add('landing-active');
     htm.classList.add('landing-active');
-  }, 800)
+  }, 300)
 }
 
 async function sendMessageMobile() {
   console.log('full grounded');
   console.log(inputText.value);
-  replaceElement.textContent = "ok";
+  replaceElement.textContent = "👀";
   changer[0].classList.remove('enter-text');
   inputText.disabled = true;
   inputText.value = "";
@@ -565,5 +573,10 @@ function animate() {
     pixel.render( ctx );
   });
   requestAnimationFrame( animate );
+}
+
+function breaking() {
+  console.log('this is working eh!')
+  showBgFast('hola');
 }
   

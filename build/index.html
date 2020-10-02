@@ -121,9 +121,13 @@
       </div>
     </div>
   </div>
-  <div class="m-4 md:m-10 border border-white border-opacity-25 rounded-lg flex" id="inputs_functions">
+  <div class="m-4 md:m-10 border border-white rounded-lg flex" id="inputs_functions">
     <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-25 appearance-none leading-normal xl:text-xl" id="messageInput" type="text" placeholder="Message Startupy">
     <span id="sendmessage" class="whitespace-no-wrap p-3 text-white text-opacity-25 text-button xl:text-xl">PRESS ENTER</span>
+    <span id="skipmessage" class="whitespace-no-wrap p-3 text-white text-opacity-25 text-button xl:text-xl enter-text removed">SKIP</span>
+  </div>
+  <div class="m-4 md:m-10 flex" id="inputs_functions_mobile">
+    <span id="skipmessage_mobile" class="whitespace-no-wrap p-3 text-white text-opacity-25 text-button xl:text-xl enter-text" style="float: right;">SKIP</span>
   </div>
 </section>
   <div id="green-shadow" class="small"></div>
@@ -168,7 +172,7 @@
         <span class="font-bold xl:text-xl">Join Our Waitlist</span>
         <!-- class box-error, box-filled y box-disabled -->
         <div class="mt-3 bg-black px-4 py-2 text-white flex items-center" id="submitBox">
-          <span class="font-bold xl:text-xl">Email</span>
+          <span class="font-bold xl:text-xl res-non">Email</span>
           <input class="placeholder-white bg-transparent focus:outline-none py-2 px-4 block w-full placeholder-opacity-50 appearance-none leading-normal xl:text-xl" type="email" placeholder="you@mail.com" id="email">
           <button class="opacity-75 xl:text-xl text-green-400" id="submitButton">Submit</button>
           <svg class="h-10 w-10 text-green-400 icon-no-show" id="submtConfirm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -357,13 +361,14 @@
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
-      apiKey: "AIzaSyCsLaobdVE3CH7fxFJRD0Rc5Oa6osblBqA",
-      authDomain: "startupy-14c86.firebaseapp.com",
-      databaseURL: "https://startupy-14c86.firebaseio.com",
-      projectId: "startupy-14c86",
-      storageBucket: "startupy-14c86.appspot.com",
-      messagingSenderId: "233793212754",
-      appId: "1:233793212754:web:ac0bd9ec03eea634836a8b"
+      apiKey: "AIzaSyB6juYaVO9x-1RbzYyddrSsqi5CcFJW8jA",
+      authDomain: "startupy-6a6b5.firebaseapp.com",
+      databaseURL: "https://startupy-6a6b5.firebaseio.com",
+      projectId: "startupy-6a6b5",
+      storageBucket: "startupy-6a6b5.appspot.com",
+      messagingSenderId: "820001248447",
+      appId: "1:820001248447:web:0d69d89f5ad9025728220a",
+      measurementId: "G-56FJVL9Q1G"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
