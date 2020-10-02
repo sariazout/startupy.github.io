@@ -106,7 +106,7 @@ html,body {
 
 .bg-modal {
   background-image: url(../static/img/bg-modal.png);
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 .home-banner {
@@ -204,8 +204,10 @@ html,body {
   color: #FF0000;
 }
 
-.box-filled button {
+.box-filled #submitButton {
   color: #2CF10C;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .box-disabled {
@@ -219,9 +221,15 @@ html,body {
   opacity: 1;
 }
 
-.box-disabled button {
+.box-disabled #submitButton {
   opacity: 0.2;
   color: black;
+}
+
+#submitButton {
+  cursor: default;
+  color: white;
+  opacity: 0.5;
 }
 
 @media screen and (min-width: 996px) {
@@ -239,12 +247,26 @@ html,body {
   }
 }
 
+
+#inputs_functions_mobile {
+  display: none;
+}
+
 @media screen and (max-width: 640px) {
   #inputs_functions {
     display: none;
   }
 
   .text-container-landing::before {
+    display: none;
+  }
+
+
+#inputs_functions_mobile {
+  display: block;
+}
+
+  .res-non {
     display: none;
   }
 } 
@@ -257,5 +279,13 @@ canvas {
 }
 
 .icon-no-show {
+  display: none;
+}
+
+#skipmessage {
+  display: block;
+}
+
+#skipmessage.removed {
   display: none;
 }
