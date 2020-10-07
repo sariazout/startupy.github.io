@@ -257,6 +257,10 @@ html,body {
     display: none;
   }
 
+  .px-l-0 {
+    padding-left: 0;
+  }
+
   .text-container-landing::before {
     display: none;
   }
@@ -288,4 +292,17 @@ canvas {
 
 #skipmessage.removed {
   display: none;
+}
+
+
+.center-links {
+  text-align: center;
+}
+
+.center-links a {
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 32px;
+  padding: 0 20px;
+  display: inline-block;
 }
