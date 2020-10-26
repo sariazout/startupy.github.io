@@ -401,7 +401,7 @@ async function sendMessage() {
     }
   }, 500);
 
-  await sleep(strings.length * 1900);
+  await sleep(strings.length * 2100);
 
 
   shadow.classList.add('open-circle');
@@ -518,7 +518,7 @@ async function sendMessageMobile() {
     }
   }, 500);
 
-  await sleep(strings.length * 1900);
+  await sleep(strings.length * 2100);
 
 
   shadow.classList.add('open-circle');
