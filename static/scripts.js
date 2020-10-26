@@ -401,7 +401,7 @@ async function sendMessage() {
     }
   }, 500);
 
-  await sleep(strings.length * 1900);
+  await sleep(strings.length * 2100);
 
 
   shadow.classList.add('open-circle');
@@ -446,6 +446,8 @@ function storeData() {
         // correctMessage.classList.add('actived');
         document.getElementById('submtConfirm').classList.remove('icon-no-show');
         document.getElementById('submitButton').innerText = "";
+        document.getElementById('joinit').style.display = "none";
+        document.getElementById('joinedit').style.display = "block";
     })
     .catch(function (error) {
         console.error("Error writing doc", error);
@@ -518,7 +520,7 @@ async function sendMessageMobile() {
     }
   }, 500);
 
-  await sleep(strings.length * 1900);
+  await sleep(strings.length * 2100);
 
 
   shadow.classList.add('open-circle');
