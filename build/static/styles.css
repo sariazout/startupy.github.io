@@ -54,6 +54,10 @@ html,body {
   background-color: #2CF10C;
 }
 
+.bg-blue-light {
+  background-color: #ECF2F5;
+}
+
 .bg-pink-electric {
   transition-property: all;
   transition-duration: 0.3s;
@@ -305,4 +309,14 @@ canvas {
   line-height: 32px;
   padding: 0 20px;
   display: inline-block;
+}
+
+.text-logo {
+  background-color: #2CF10C;
+  padding: 0 10px;
+  border-radius: 20px;
+}
+
+#joinedit {
+  display: none;
 }

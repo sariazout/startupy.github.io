@@ -316,3 +316,7 @@ canvas {
   padding: 0 10px;
   border-radius: 20px;
 }
+
+#joinedit {
+  display: none;
+}

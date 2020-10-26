@@ -446,6 +446,8 @@ function storeData() {
         // correctMessage.classList.add('actived');
         document.getElementById('submtConfirm').classList.remove('icon-no-show');
         document.getElementById('submitButton').innerText = "";
+        document.getElementById('joinit').style.display = "none";
+        document.getElementById('joinedit').style.display = "block";
     })
     .catch(function (error) {
         console.error("Error writing doc", error);
