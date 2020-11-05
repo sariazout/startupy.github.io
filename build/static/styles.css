@@ -1,4 +1,5 @@
-html,body {
+html,
+body {
   scroll-behavior: smooth;
 }
 
@@ -23,27 +24,27 @@ html,body {
 }
 
 .ff-conv-druk {
-  font-family: 'Conv_Druk Cond Super';
+  font-family: "Conv_Druk Cond Super";
 }
 
 .ff-conv-PxGrotesk {
-	font-family: 'Conv_PxGrotesk-OIL';
+  font-family: "Conv_PxGrotesk-OIL";
 }
 
 .ff-conv-ConcordeBQ {
-	font-family: 'Conv_ConcordeBQ-Regular';
+  font-family: "Conv_ConcordeBQ-Regular";
 }
 
 .ff-mono-bold {
-	font-family: 'sf_monobold';
+  font-family: "sf_monobold";
 }
 
 .ff-mono-regular {
-	font-family: 'sf_monoregular';
+  font-family: "sf_monoregular";
 }
 
 .ff-mono-light {
-	font-family: 'sf_monolight';
+  font-family: "sf_monolight";
 }
 
 .lh-08 {
@@ -51,18 +52,18 @@ html,body {
 }
 
 .bg-green-electric {
-  background-color: #2CF10C;
+  background-color: #2cf10c;
 }
 
 .bg-blue-light {
-  background-color: #ECF2F5;
+  background-color: #ecf2f5;
 }
 
 .bg-pink-electric {
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-  background-color: #FF39BC;
+  background-color: #ff39bc;
 }
 
 .bg-pink-electric:hover {
@@ -72,7 +73,7 @@ html,body {
 }
 
 .text-blue-electric {
-  color: #0C3EF1;
+  color: #0c3ef1;
 }
 
 .rounded-24 {
@@ -164,7 +165,7 @@ html,body {
 }
 
 .text-container-landing::before {
-  content: '';
+  content: "";
   background-image: url(../static/img/fondo.png);
   top: 20px;
   width: auto;
@@ -188,7 +189,6 @@ html,body {
   z-index: 100;
 }
 
-
 #ideal {
   background: black;
   position: relative;
@@ -205,22 +205,22 @@ html,body {
 }
 
 .box-error span {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .box-filled #submitButton {
-  color: #2CF10C;
+  color: #2cf10c;
   opacity: 1;
   cursor: pointer;
 }
 
 .box-disabled {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .box-disabled span,
-.box-disabled input, 
-.box-disabled input::placeholder { 
+.box-disabled input,
+.box-disabled input::placeholder {
   color: black;
   opacity: 1;
 }
@@ -238,7 +238,7 @@ html,body {
 
 @media screen and (min-width: 996px) {
   .text-container-landing::before {
-    content: '';
+    content: "";
     background-image: url(../static/img/fondo.png);
     top: 20px;
     width: auto;
@@ -250,7 +250,6 @@ html,body {
     background-repeat: no-repeat;
   }
 }
-
 
 #inputs_functions_mobile {
   display: none;
@@ -269,15 +268,14 @@ html,body {
     display: none;
   }
 
-
-#inputs_functions_mobile {
-  display: block;
-}
+  #inputs_functions_mobile {
+    display: block;
+  }
 
   .res-non {
     display: none;
   }
-} 
+}
 
 canvas {
   display: block;
@@ -298,7 +296,6 @@ canvas {
   display: none;
 }
 
-
 .center-links {
   text-align: center;
 }
@@ -312,11 +309,30 @@ canvas {
 }
 
 .text-logo {
-  background-color: #2CF10C;
+  background-color: #2cf10c;
   padding: 0 10px;
   border-radius: 20px;
 }
 
 #joinedit {
   display: none;
+}
+
+.link-back {
+  color: #a0a0a0;
+  font-size: 12px;
+  line-height: 16px;
+  display: inline-block;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.twicon {
+  position: absolute;
+  right: 20px;
+  display: inline-block;
 }
