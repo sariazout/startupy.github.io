@@ -509,13 +509,15 @@ async function sendMessageMobile() {
   let messages = userElement.getElementsByClassName("item-text");
   console.log("this element list; ", messages.length);
 
+  await sleep(400);
+
   for (let i = 0; i < icons.length; i++) {
-    await sleep(100);
+    await sleep(600);
     icons[i].classList.add("inactive");
   }
 
   for (let i = 0; i < messages.length; i++) {
-    await sleep(100);
+    await sleep(600);
     messages[i].classList.add("inactive");
   }
 
@@ -523,7 +525,7 @@ async function sendMessageMobile() {
     fillingElement.classList.add("inactive");
     let iconfilling = fillingElement.getElementsByClassName("item-icon");
     for (let i = 0; i < iconfilling.length; i++) {
-      await sleep(100);
+      await sleep(500);
       iconfilling[i].classList.add("inactive");
     }
     for (let i = 0; i < strings.length; i++) {
