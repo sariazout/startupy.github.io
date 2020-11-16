@@ -39,6 +39,8 @@ var directLink = "";
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 
+var anchorBottom = document.getElementById("link-bottom");
+
 console.log(firstDistance);
 
 window.onscroll = function () {
@@ -160,6 +162,8 @@ window.onload = async function () {
   }
 
   buttonSubmit.addEventListener("click", storeData);
+
+  anchorBottom.addEventListener("click", anchorBottomClick);
 
   dragElement(document.getElementById("window"));
 
@@ -608,4 +612,13 @@ function animate() {
 function breaking() {
   console.log("this is working eh!");
   showBgFast("hola");
+}
+
+function anchorBottomClick(event) {
+  event.preventDefault();
+  let heightWindow = window.innerHeight;
+  window.scrollTo({
+    top: heightWindow,
+    behavior: "smooth",
+  });
 }

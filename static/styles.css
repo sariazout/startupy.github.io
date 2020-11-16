@@ -175,8 +175,9 @@ body {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  z-index: 180;
   opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #ideals {
@@ -352,4 +353,19 @@ canvas {
   position: absolute;
   right: 20px;
   display: inline-block;
+}
+
+.images-link {
+  display: inline-block;
+  position: absolute;
+  top: calc(50% + 300px);
+}
+
+.images-link img {
+  display: block;
+  position: relative;
+}
+
+.images-link img.second-image {
+  margin-top: -10px;
 }
