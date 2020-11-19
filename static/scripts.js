@@ -154,6 +154,7 @@ window.onload = async function () {
   console.log(directLink);
 
   animate();
+  // getAirtable();
 
   if (directLink === "yes") {
     console.log("hola");
@@ -161,7 +162,7 @@ window.onload = async function () {
   } else {
   }
 
-  buttonSubmit.addEventListener("click", storeData);
+  buttonSubmit.addEventListener("click", getAirtable);
 
   anchorBottom.addEventListener("click", anchorBottomClick);
 
@@ -621,4 +622,46 @@ function anchorBottomClick(event) {
     top: heightWindow,
     behavior: "smooth",
   });
+}
+
+function getAirtable() {
+  console.log("creacion de todo");
+
+  let dates = new Date();
+  let emailuse = document.getElementById("email").value;
+  let name = emailuse;
+  let idat = dates.getTime();
+  let idate = idat.toString();
+  console.log(idate);
+
+  async function callingFn() {
+    try {
+      const response = await fetch(
+        "https://v1.nocodeapi.com/dalvenjha/airtable/IWnLKWYrvwtsQelI?tableName=Waitlist",
+        {
+          method: "post",
+          body: JSON.stringify([{ Email: name, ID: idate }]),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const json = await response.json();
+      console.log("Success:", JSON.stringify(json));
+      submitBox.classList.remove("box-error");
+      submitBox.classList.remove("box-filled");
+      // submitBox.classList.add('box-disabled');
+      // emailInput.disabled = true;
+      // correctMessage.classList.add('actived');
+      document.getElementById("submtConfirm");
+      // .classList.remove("icon-no-show");
+      // document.getElementById("submitButton").innerText = "";
+      document.getElementById("joinit").style.display = "none";
+      document.getElementById("joinedit").style.display = "block";
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  callingFn();
 }
