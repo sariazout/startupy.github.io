@@ -41,6 +41,8 @@ var ctx = canvas.getContext("2d");
 
 var anchorBottom = document.getElementById("link-bottom");
 
+var allowSubmit = false;
+
 console.log(firstDistance);
 
 window.onscroll = function () {
@@ -275,10 +277,22 @@ window.onload = async function () {
       console.log("not value correct");
       submitBox.classList.remove("box-filled");
       submitBox.classList.add("box-error");
+      allowSubmit = false;
     } else {
       submitBox.classList.remove("box-error");
       submitBox.classList.add("box-filled");
       console.log("this is a correct mail");
+      allowSubmit = true;
+      emailInput.addEventListener("keydown", function (e) {
+        if (e.keyCode == 13) { 
+          if(allowSubmit) {
+            console.log("I'll allow it");
+            getAirtable();
+          } else {
+            console.log("you shall not pass");
+          }
+         }
+      });
     }
   });
 };
