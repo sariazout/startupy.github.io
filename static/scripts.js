@@ -302,6 +302,16 @@ window.onresize = function () {
   console.log(firstDistance);
 };
 
+function handleEventsAnalytics(event) {
+  console.log('sending to google');
+  console.log(event.target);
+  ga('send', 'event', {
+    eventCategory: 'Registering Event',
+    eventAction: 'click',
+    eventLabel: event.target
+  });
+}
+
 function scrollables(elementIndex, targetedName) {
   // console.log('this elements are:', linkeds[elementIndex]);
   let nextDistance = document.getElementById("land-container").offsetTop;
@@ -624,8 +634,9 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-function breaking() {
+function breaking(event) {
   console.log("this is working eh!");
+  handleEventsAnalytics(event);
   showBgFast("hola");
 }
 
