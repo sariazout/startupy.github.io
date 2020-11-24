@@ -302,13 +302,13 @@ window.onresize = function () {
   console.log(firstDistance);
 };
 
-function handleEventsAnalytics(event) {
+function handleEventsAnalytics(event,label) {
   console.log('sending to google');
   console.log(event.target);
   ga('send', 'event', {
     eventCategory: 'Registering Event',
     eventAction: 'click',
-    eventLabel: event.target
+    eventLabel: label
   });
 }
 
@@ -636,7 +636,7 @@ function animate() {
 
 function breaking(event) {
   console.log("this is working eh!");
-  handleEventsAnalytics(event);
+  handleEventsAnalytics(event,'Skipping the animations');
   showBgFast("hola");
 }
 
