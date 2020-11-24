@@ -17,7 +17,7 @@ var strings = [
   "We surf the web...",
   "Jumping from thought to thought...",
   "Tab to tab...",
-  "Hoping for an intellectual breakthrough",
+  "Hoping for an intellectual breakthrough.",
   "Exhilarated, but mentally exhausted...",
 ];
 var problem = document.getElementById("land-container");
