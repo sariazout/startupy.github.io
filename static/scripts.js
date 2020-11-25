@@ -287,8 +287,8 @@ window.onload = async function () {
       submitBox.classList.add("box-filled");
       console.log("this is a correct mail");
       allowSubmit = true;
-      emailInput.addEventListener("keypress", function (e) {
-        if (e.keyCode == 13 && allowSubmit) {
+      emailInput.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13 && allowSubmit) {
           console.log("I'll allow it");
           e.preventDefault();
           buttonSubmit.click();
