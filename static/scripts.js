@@ -290,6 +290,7 @@ window.onload = async function () {
       emailInput.addEventListener("keypress", function (e) {
         if (e.keyCode == 13 && allowSubmit) {
           console.log("I'll allow it");
+          e.preventDefault();
           getAirtable();
         } else {
           console.log("you shall not pass");
