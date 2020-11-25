@@ -9,6 +9,7 @@ var inputText = document.getElementById("messageInput");
 var changer = document.getElementsByClassName("text-button");
 var valueText = "";
 var sendbutton = document.getElementById("sendmessage");
+let sendTweet = document.getElementById("sendTwit");
 var strings = [
   "We spend endless hours falling down Internet rabbit holes.",
   "Caught in a stream of newsletters.",
@@ -147,6 +148,8 @@ window.onload = async function () {
 
   var breaker2 = document.getElementById("skipmessage_mobile");
   breaker2.addEventListener("click", breaking);
+
+  sendTweet.addEventListener("click", sendingTweet);
 
   const queryString = window.location.search;
   console.log(queryString);
@@ -649,6 +652,10 @@ function anchorBottomClick(event) {
     top: heightWindow,
     behavior: "smooth",
   });
+}
+
+function sendingTweet(event) {
+  handleEventsAnalytics(event,'Sharing Tweet from Startupy','click');
 }
 
 function getAirtable(event) {
