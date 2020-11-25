@@ -696,6 +696,7 @@ function getAirtable(event) {
       // document.getElementById("submitButton").innerText = "";
       document.getElementById("joinit").style.display = "none";
       document.getElementById("joinedit").style.display = "block";
+      buttonSubmit.disabled = false;
     } catch (error) {
       console.error("Error:", error);
     }
