@@ -174,8 +174,8 @@ window.onload = async function () {
     if (e.key === "Enter" && allowSubmit) {
       console.log("I'll allow it");
       e.preventDefault();
-      // buttonSubmit.click();
-      debugger;
+      buttonSubmit.click();
+      // debugger;
     } else {
       console.log("you shall not pass");
     }
