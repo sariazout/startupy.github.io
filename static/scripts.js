@@ -662,6 +662,8 @@ function sendingTweet(event) {
 function getAirtable(event) {
   console.log("creacion de todo");
   handleEventsAnalytics(event, "E-mail registration", "click");
+  allowSubmit = false;
+  buttonSubmit.disabled = true;
 
   let dates = new Date();
   let emailuse = document.getElementById("email").value;
