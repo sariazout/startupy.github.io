@@ -241,7 +241,7 @@ window.onload = async function () {
   bgbutton.addEventListener("click", showBg);
 
   function showBg(event) {
-    handleEventsAnalytics(event,'Show me - Another world is posible','click');
+    handleEventsAnalytics(event, "Show me - Another world is posible", "click");
     let bgoverlay = document.getElementById("bg-colors");
     bgoverlay.classList.add("actived");
     setTimeout(function () {
@@ -288,14 +288,12 @@ window.onload = async function () {
       console.log("this is a correct mail");
       allowSubmit = true;
       emailInput.addEventListener("keydown", function (e) {
-        if (e.keyCode == 13) { 
-          if(allowSubmit) {
-            console.log("I'll allow it");
-            getAirtable();
-          } else {
-            console.log("you shall not pass");
-          }
-         }
+        if (e.keyCode == 13 && allowSubmit) {
+          console.log("I'll allow it");
+          getAirtable();
+        } else {
+          console.log("you shall not pass");
+        }
       });
     }
   });
@@ -306,12 +304,12 @@ window.onresize = function () {
   console.log(firstDistance);
 };
 
-function handleEventsAnalytics(event,label,typeEvent) {
-  console.log('sending to google');
-  ga('send', 'event', {
-    eventCategory: 'Registering Event',
+function handleEventsAnalytics(event, label, typeEvent) {
+  console.log("sending to google");
+  ga("send", "event", {
+    eventCategory: "Registering Event",
     eventAction: typeEvent,
-    eventLabel: label
+    eventLabel: label,
   });
 }
 
@@ -401,7 +399,7 @@ document.getElementById("backlink").addEventListener("click", function () {
 });
 
 async function sendMessage() {
-  handleEventsAnalytics(event,'Message startupy','enter');
+  handleEventsAnalytics(event, "Message startupy", "enter");
   console.log("full grounded");
   console.log(inputText.value);
   replaceElement.textContent = inputText.value;
@@ -640,7 +638,7 @@ function animate() {
 
 function breaking(event) {
   console.log("this is working eh!");
-  handleEventsAnalytics(event,'Skip animations','click');
+  handleEventsAnalytics(event, "Skip animations", "click");
   showBgFast("hola");
 }
 
@@ -654,12 +652,12 @@ function anchorBottomClick(event) {
 }
 
 function sendingTweet(event) {
-  handleEventsAnalytics(event,'Sharing Tweet from Startupy','click');
+  handleEventsAnalytics(event, "Sharing Tweet from Startupy", "click");
 }
 
 function getAirtable(event) {
   console.log("creacion de todo");
-  handleEventsAnalytics(event,'E-mail registration','click');
+  handleEventsAnalytics(event, "E-mail registration", "click");
 
   let dates = new Date();
   let emailuse = document.getElementById("email").value;
