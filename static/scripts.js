@@ -308,7 +308,6 @@ window.onresize = function () {
 
 function handleEventsAnalytics(event,label,typeEvent) {
   console.log('sending to google');
-  console.log(event.target);
   ga('send', 'event', {
     eventCategory: 'Registering Event',
     eventAction: typeEvent,
