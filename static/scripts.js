@@ -291,7 +291,7 @@ window.onload = async function () {
         if (e.keyCode == 13 && allowSubmit) {
           console.log("I'll allow it");
           e.preventDefault();
-          getAirtable();
+          buttonSubmit.click();
         } else {
           console.log("you shall not pass");
         }
