@@ -237,7 +237,8 @@ window.onload = async function () {
   let bgbutton = document.getElementById("bgbutton");
   bgbutton.addEventListener("click", showBg);
 
-  function showBg() {
+  function showBg(event) {
+    handleEventsAnalytics(event,'Show me - Another world is posible','click');
     let bgoverlay = document.getElementById("bg-colors");
     bgoverlay.classList.add("actived");
     setTimeout(function () {
@@ -302,12 +303,12 @@ window.onresize = function () {
   console.log(firstDistance);
 };
 
-function handleEventsAnalytics(event,label) {
+function handleEventsAnalytics(event,label,typeEvent) {
   console.log('sending to google');
   console.log(event.target);
   ga('send', 'event', {
     eventCategory: 'Registering Event',
-    eventAction: 'click',
+    eventAction: typeEvent,
     eventLabel: label
   });
 }
@@ -398,6 +399,7 @@ document.getElementById("backlink").addEventListener("click", function () {
 });
 
 async function sendMessage() {
+  handleEventsAnalytics(event,'Message startupy','enter');
   console.log("full grounded");
   console.log(inputText.value);
   replaceElement.textContent = inputText.value;
@@ -636,7 +638,7 @@ function animate() {
 
 function breaking(event) {
   console.log("this is working eh!");
-  handleEventsAnalytics(event,'Skipping the animations');
+  handleEventsAnalytics(event,'Skip animations','click');
   showBgFast("hola");
 }
 
@@ -649,8 +651,9 @@ function anchorBottomClick(event) {
   });
 }
 
-function getAirtable() {
+function getAirtable(event) {
   console.log("creacion de todo");
+  handleEventsAnalytics(event,'E-mail registration','click');
 
   let dates = new Date();
   let emailuse = document.getElementById("email").value;
