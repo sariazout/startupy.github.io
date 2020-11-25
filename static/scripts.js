@@ -291,7 +291,8 @@ window.onload = async function () {
         if (e.keyCode === 13 && allowSubmit) {
           console.log("I'll allow it");
           e.preventDefault();
-          buttonSubmit.click();
+          // buttonSubmit.click();
+          debugger;
         } else {
           console.log("you shall not pass");
         }
