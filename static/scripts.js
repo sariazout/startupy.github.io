@@ -169,6 +169,18 @@ window.onload = async function () {
 
   buttonSubmit.addEventListener("click", getAirtable);
 
+  emailInput.addEventListener("keyup", function (e) {
+    console.log("this is the key: ", e.key);
+    if (e.key === 13 && allowSubmit) {
+      console.log("I'll allow it");
+      e.preventDefault();
+      // buttonSubmit.click();
+      debugger;
+    } else {
+      console.log("you shall not pass");
+    }
+  });
+
   anchorBottom.addEventListener("click", anchorBottomClick);
 
   dragElement(document.getElementById("window"));
@@ -287,16 +299,6 @@ window.onload = async function () {
       submitBox.classList.add("box-filled");
       console.log("this is a correct mail");
       allowSubmit = true;
-      emailInput.addEventListener("keyup", function (e) {
-        if (e.keyCode === 13 && allowSubmit) {
-          console.log("I'll allow it");
-          e.preventDefault();
-          // buttonSubmit.click();
-          debugger;
-        } else {
-          console.log("you shall not pass");
-        }
-      });
     }
   });
 };
