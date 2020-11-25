@@ -171,7 +171,7 @@ window.onload = async function () {
 
   emailInput.addEventListener("keyup", function (e) {
     console.log("this is the key: ", e.key);
-    if (e.key === 13 && allowSubmit) {
+    if (e.key === "Enter" && allowSubmit) {
       console.log("I'll allow it");
       e.preventDefault();
       // buttonSubmit.click();
