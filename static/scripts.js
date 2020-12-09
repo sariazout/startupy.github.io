@@ -232,6 +232,8 @@ window.onload = async function () {
     if (event.key === "Enter" || event.keyCode === 13) {
       if (valueText != "") {
         console.log("enter key");
+        let elementFake = document.getElementById("fakeclick");
+        elementFake.click();
         sendMessage();
       } else {
         return false;
