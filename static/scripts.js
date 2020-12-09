@@ -404,6 +404,7 @@ document.getElementById("backlink").addEventListener("click", function () {
 
 async function sendMessage() {
   handleEventsAnalytics(event, "Message startupy", "enter");
+  dataLayer.push({ event: "Message-startupy" });
   console.log("full grounded");
   console.log(inputText.value);
   replaceElement.textContent = inputText.value;
