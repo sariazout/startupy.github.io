@@ -31,7 +31,6 @@ var linkeds = document.getElementsByClassName("linksside");
 var linksItems = document.getElementsByClassName("sideMenuItem");
 var sideMenuAlt = document.getElementById("sideMenuAlt");
 var buttonSubmit = document.getElementById("submitButton");
-var db = firebase.firestore();
 var emailInput = document.getElementById("email");
 var submitBox = document.getElementById("submitBox");
 var correctMessage = document.getElementById("corr-message");
@@ -486,38 +485,33 @@ async function sendMessage() {
   window.classList.add("actived");
 }
 
-function storeData() {
-  let dates = new Date();
-  let emailuse = document.getElementById("email").value;
-  let name = emailuse;
-  let idate = dates.getTime();
-  if (submitBox.classList.contains("box-filled")) {
-    db.collection("emails")
-      .doc(name)
-      .set({
-        id: parseInt(idate),
-        email: emailuse,
-      })
-      .then(function () {
-        submitBox.classList.remove("box-error");
-        submitBox.classList.remove("box-filled");
-        // submitBox.classList.add('box-disabled');
-        // emailInput.disabled = true;
-        // correctMessage.classList.add('actived');
-        document.getElementById("submtConfirm");
-        // .classList.remove("icon-no-show");
-        // document.getElementById("submitButton").innerText = "";
-        document.getElementById("joinit").style.display = "none";
-        document.getElementById("joinedit").style.display = "block";
-      })
-      .catch(function (error) {
-        console.error("Error writing doc", error);
-      });
-  } else {
-    console.log("no way chull");
-    return false;
-  }
-}
+// function storeData() {
+//   let dates = new Date();
+//   let emailuse = document.getElementById("email").value;
+//   let name = emailuse;
+//   let idate = dates.getTime();
+//   if (submitBox.classList.contains("box-filled")) {
+//     db.collection("emails")
+//       .doc(name)
+//       .set({
+//         id: parseInt(idate),
+//         email: emailuse,
+//       })
+//       .then(function () {
+//         submitBox.classList.remove("box-error");
+//         submitBox.classList.remove("box-filled");
+//         document.getElementById("submtConfirm");
+//         document.getElementById("joinit").style.display = "none";
+//         document.getElementById("joinedit").style.display = "block";
+//       })
+//       .catch(function (error) {
+//         console.error("Error writing doc", error);
+//       });
+//   } else {
+//     console.log("no way chull");
+//     return false;
+//   }
+// }
 
 function showBgFast(elm) {
   let bgoverlay = document.getElementById("bg-colors");
