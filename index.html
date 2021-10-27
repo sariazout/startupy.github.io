@@ -78,9 +78,20 @@
 </section>
 
 <main id="main-content">
-  <section
+  <!-- <section
     class="relative h-screen p-6 text-black bg-modal flex items-center justify-center"
+  > -->
+  <section
+    class="relative t-screen p-6 text-black bg-modal flex items-center justify-center"
   >
+    <div class="absolute text-white top-8 left-8">
+      <p class="mb-2">Drops</p>
+      <a href="https://www.ghostknowledge.com/" target="_blank" class="new-links inline-block rounded px-2 py-1 bg-white text-black mb-2">ghost knowledge</a><br />
+      <a href="https://themodernbillboard.com/" target="_blank" class="new-links inline-block rounded px-2 py-1 bg-white text-black">the modern billboard collective</a>
+    </div>
+    <div class="absolute bg-white bottom-8 right-8 px-4">
+      <p onclick="anchorBottomClick()" class="clicker">Manifesto <span class="text-2xl">&#x025BE;</span></p>
+    </div>
     <div class="bg-white p-8 max-w-lg xl:max-w-2xl">
       <p
         class="font-bold text-xl leading-6 md:text-2xl md:leading-8 xl:text-4xl xl:leading-10"
@@ -155,6 +166,13 @@
         <p class="link-back" id="backlink">Take me back</p>
       </div>
     </div>
+  </section>
+  <section class="billboard p-8">
+    <div class="flex w-11/12 mx-auto mt-6">
+      <a href="https://startupy.onlytiktok.com/" class="mr-4 text-gray-700 bg-white py-2 px-3 rounded rounded-links" target="_blank">Purchase a square lot</a>
+      <a href="http://themodernbillboard.eth/" class=" text-gray-700 bg-white py-2 px-3 rounded rounded-links" target="_blank">What is this billboard?</a>
+    </div>
+    <div id="frame-template" class="grid grid-cols-12 gap-2 w-11/12 mx-auto my-8"></div>
   </section>
 
   {% include 'landing.html' %}

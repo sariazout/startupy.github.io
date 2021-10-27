@@ -110,7 +110,7 @@ body {
 }
 
 .bg-modal {
-  background-image: url(../static/img/bg-modal.png);
+  /* background-image: url(../static/img/bg-modal.png); */
   background-size: cover;
 }
 
@@ -335,4 +335,62 @@ canvas {
   position: absolute;
   right: 20px;
   display: inline-block;
+}
+
+
+.t-screen {
+  height: 65vh;
+}
+
+.billboard {
+  background-image: url(../static/img/bg-modal-whole.png);
+  background-size: cover;
+  position: relative;
+  min-height: 35vh;
+  overflow: hidden;
+}
+
+#embedded-content {
+  height: 70%;
+  overflow: auto;
+}
+
+
+.top-8 {
+  top: 2rem;
+}
+
+.left-8 {
+  left: 2rem;
+}
+
+.right-8 {
+  right: 2rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
+
+.clicker {
+  cursor: pointer;
+}
+
+.new-links {
+  border-radius: 10px;
+}
+
+.new-links:hover {
+  background: #2CF10C;
+  color: #000;
+}
+
+.frame-item:hover {
+  border-color: blue;
+  background-color: #dde2f5;
+}
+
+.rounded-links:hover {
+  background-color: #2CF10C;
 }

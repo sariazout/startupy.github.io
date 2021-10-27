@@ -39,6 +39,8 @@ var directLink = "";
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 
+var iframeEmbed = document.querySelector('#embedded-content');
+
 console.log(firstDistance);
 
 window.onscroll = function () {
@@ -150,6 +152,7 @@ window.onload = async function () {
   console.log(urlParams);
   directLink = urlParams.get("direct");
   console.log(directLink);
+
 
   animate();
 
@@ -606,4 +609,16 @@ function animate() {
 function breaking() {
   console.log("this is working eh!");
   showBgFast("hola");
+}
+
+function loadedIframe(event) {
+  console.log('this is the event: ', event.contentWindow.document);
+}
+
+function anchorBottomClick() {
+  let heightWindow = window.innerHeight;
+  window.scrollTo({
+    top: heightWindow,
+    behavior: "smooth",
+  });
 }

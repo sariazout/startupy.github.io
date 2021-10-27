@@ -39,6 +39,8 @@ var directLink = "";
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 
+var iframeEmbed = document.querySelector('#embedded-content');
+
 console.log(firstDistance);
 
 window.onscroll = function () {
@@ -151,12 +153,14 @@ window.onload = async function () {
   directLink = urlParams.get("direct");
   console.log(directLink);
 
+
   animate();
 
   if (directLink === "yes") {
     console.log("hola");
     showBgFast("hola");
   } else {
+    showBgFast("hola");
   }
 
   buttonSubmit.addEventListener("click", storeData);
@@ -275,6 +279,56 @@ window.onload = async function () {
       submitBox.classList.add("box-filled");
       console.log("this is a correct mail");
     }
+  });
+
+
+  // Example POST method implementation:
+async function getData(url = '') {
+  const response = await fetch(url, {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
+
+getData('https://nft-canvas.uc.r.appspot.com/api/grid/startupy?token=this-is-for-you-luis!')
+  .then(data => {
+    let container = document.querySelector('#frame-template');
+    data.forEach((element) => {
+      let claim = element.claimed;
+      let identificator = element.id;
+      let name;
+      let insert;
+      if(identificator <= 11) {
+        name = 'A'+(identificator + 1)
+      } else if(identificator <= 23){
+        name = 'B'+(identificator - 11)
+      } else if(identificator <= 35){
+        name = 'C'+(identificator - 23)
+      } else {
+        name = 'D'+(identificator - 35)
+      }
+      if(claim) {
+        insert = `<div class="col-span-1 h-32">
+          <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="relative frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
+            <img src="${element.contentURI}" class="block w-full h-full object-cover" />
+          </a>
+        </div>`;
+      } else {
+        insert = `<div class="col-span-1 h-32">
+          <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="relative frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">${name}</a>
+        </div>`;
+      }
+      container.insertAdjacentHTML('beforeend',insert);
+    });
   });
 };
 
@@ -606,4 +660,12 @@ function animate() {
 function breaking() {
   console.log("this is working eh!");
   showBgFast("hola");
+}
+
+function anchorBottomClick() {
+  let heightWindow = window.innerHeight;
+  window.scrollTo({
+    top: heightWindow,
+    behavior: "smooth",
+  });
 }
