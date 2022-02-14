@@ -693,14 +693,14 @@ function breaking(event) {
   showBgFast("hola");
 }
 
-function anchorBottomClick(event) {
-  event.preventDefault();
-  let heightWindow = window.innerHeight;
-  window.scrollTo({
-    top: heightWindow,
-    behavior: "smooth",
-  });
-}
+// function anchorBottomClick(event) {
+//   event.preventDefault();
+//   let heightWindow = window.innerHeight;
+//   window.scrollTo({
+//     top: heightWindow,
+//     behavior: "smooth",
+//   });
+// }
 
 function sendingTweet(event) {
   // handleEventsAnalytics(event, "Sharing Tweet from Startupy", "click");
@@ -750,4 +750,12 @@ function getAirtable(event) {
   }
 
   callingFn();
+}
+
+function anchorBottomClick() {
+  let heightWindow = window.innerHeight;
+  window.scrollTo({
+    top: heightWindow,
+    behavior: "smooth",
+  });
 }
