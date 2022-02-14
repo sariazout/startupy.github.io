@@ -430,3 +430,20 @@ canvas {
 .square {
   padding-bottom: 100%;
 }
+
+
+@media screen and (max-width: 640px) {
+  .drops {
+    height: 120px;
+    overflow: hidden;
+    left: 0!important;
+    top: 0!important;
+  }
+
+  .anchor-drop {
+    /* margin: 0 !important; */
+    margin-top: 10px;
+    bottom: 0!important;
+    right: initial!important;
+  }
+}

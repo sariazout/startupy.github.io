@@ -164,7 +164,6 @@ window.onload = async function () {
     console.log("hola");
     showBgFast("hola");
   } else {
-    showBgFast("hola");
   }
 
   buttonSubmit.addEventListener("click", getAirtable);
@@ -341,13 +340,13 @@ window.onload = async function () {
         }
         if(claim) {
           insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
-            <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
+            <a href="https://startupy.themodernbillboard.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
               <img src="${element.contentURI}" class="block w-full h-full object-cover" />
             </a>
           </div>`;
         } else {
           insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
-            <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">${name}</a>
+            <a href="https://startupy.themodernbillboard.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">${name}</a>
           </div>`;
         }
         container.insertAdjacentHTML('beforeend',insert);

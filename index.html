@@ -329,16 +329,14 @@
 
     <main id="main-content">
       <section
-        class="relative t-screen p-6 text-black bg-modal flex items-center justify-center"
+        class="relative t-screen p-6 text-black bg-modal block md:flex items-center justify-center"
       >
-      <div class="absolute text-white top-8 left-8">
+      <div class="relative md:absolute text-white top-8 left-8 drops">
         <p class="mb-2 text-xs ff-mono-light">drops</p>
         <a href="https://www.ghostknowledge.com/" target="_blank" class="new-links inline-block rounded px-2 py-1 bg-white text-black mb-2">ghost knowledge</a><br />
         <a href="https://themodernbillboard.com/" target="_blank" class="new-links inline-block rounded px-2 py-1 bg-white text-black">the modern billboard collective</a>
       </div>
-      <div class="absolute bg-white bottom-8 right-8 px-4">
-        <p onclick="anchorBottomClick()" class="clicker">manifesto <span class="text-2xl">&#x025BE;</span></p>
-      </div>
+      
 
         <div class="bg-white p-8 max-w-lg xl:max-w-2xl">
           <p
@@ -417,6 +415,10 @@
               <p class="link-back" id="backlink">Take me back</p>
             </div>
           </div>
+        </div>
+
+        <div class="relative md:absolute bg-white mt-2 inline-block bottom-8 right-8 px-4 anchor-drop">
+          <p onclick="anchorBottomClick()" class="clicker">manifesto <span class="text-2xl">&#x025BE;</span></p>
         </div>
 
         <!-- <a href="#" class="images-link" id="link-bottom">
