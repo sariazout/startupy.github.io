@@ -321,10 +321,10 @@ window.onload = async function () {
   
   getData('https://themodernbillboard.com/api/grid/startupy?token=this-is-for-you-luis!')
     .then(data => {
-      console.log('this is the data: ',data);
+      // console.log('this is the data: ',data);
       let container = document.querySelector('#frame-template');
       data.data.forEach((element) => {
-        console.log('the element: ',element);
+        // console.log('the element: ',element);
         let claim = element.claimed;
         let identificator = element.id;
         let name;
@@ -338,11 +338,19 @@ window.onload = async function () {
         } else {
           name = 'D'+(identificator - 35)
         }
+        console.log('is this asked?: ',element.currentAsk);
         if(claim) {
           insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
             <a href="https://startupy.themodernbillboard.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
               <img src="${element.contentURI}" class="block w-full h-full object-cover" />
             </a>
+          </div>`;
+        } else if( !claim && !element.currentAsk ) {
+          console.log('element not claimed nor asked');
+          insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
+            <span class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#3b3b3b" d="M19.5 10.875h-1.594v-5.25a3 3 0 00-3-3H9.094a3 3 0 00-3 3v5.25H4.5a.75.75 0 00-.75.75v9c0 .415.335.75.75.75h15a.75.75 0 00.75-.75v-9a.75.75 0 00-.75-.75zm-6.844 5.555v1.242a.188.188 0 01-.187.187h-.938a.188.188 0 01-.187-.187V16.43a1.125 1.125 0 111.312 0zm3.563-5.555H7.78v-5.25c0-.724.589-1.313 1.313-1.313h5.812c.724 0 1.313.589 1.313 1.313v5.25z"></path></svg>
+            </span>
           </div>`;
         } else {
           insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
