@@ -433,6 +433,12 @@ canvas {
 
 
 @media screen and (max-width: 640px) {
+  .t-screen {
+    min-height: 65vh;
+    overflow: hidden;
+    height: initial;
+  }
+
   .drops {
     height: 120px;
     overflow: hidden;
