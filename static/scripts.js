@@ -39,7 +39,7 @@ var directLink = "";
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 
-var anchorBottom = document.getElementById("link-bottom");
+// var anchorBottom = document.getElementById("link-bottom");
 
 var allowSubmit = false;
 
@@ -164,6 +164,7 @@ window.onload = async function () {
     console.log("hola");
     showBgFast("hola");
   } else {
+    showBgFast("hola");
   }
 
   buttonSubmit.addEventListener("click", getAirtable);
@@ -180,7 +181,7 @@ window.onload = async function () {
     }
   });
 
-  anchorBottom.addEventListener("click", anchorBottomClick);
+  // anchorBottom.addEventListener("click", anchorBottomClick);
 
   dragElement(document.getElementById("window"));
 
@@ -302,6 +303,56 @@ window.onload = async function () {
       allowSubmit = true;
     }
   });
+
+  async function getData(url = '') {
+    const response = await fetch(url, {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+  }
+  
+  getData('https://themodernbillboard.com/api/grid/startupy?token=this-is-for-you-luis!')
+    .then(data => {
+      console.log('this is the data: ',data);
+      let container = document.querySelector('#frame-template');
+      data.data.forEach((element) => {
+        console.log('the element: ',element);
+        let claim = element.claimed;
+        let identificator = element.id;
+        let name;
+        let insert;
+        if(identificator <= 11) {
+          name = 'A'+(identificator + 1)
+        } else if(identificator <= 23){
+          name = 'B'+(identificator - 11)
+        } else if(identificator <= 35){
+          name = 'C'+(identificator - 23)
+        } else {
+          name = 'D'+(identificator - 35)
+        }
+        if(claim) {
+          insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
+            <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">
+              <img src="${element.contentURI}" class="block w-full h-full object-cover" />
+            </a>
+          </div>`;
+        } else {
+          insert = `<div class="relative col-span-3 sm:col-span-2 md:col-span-2 xl:col-span-1 square">
+            <a href="https://startupy.onlytiktok.com/lot/${name}" target="_blank" class="absolute frame-item w-full h-full flex justify-center items-center bg-white border border-2 border-gray-800">${name}</a>
+          </div>`;
+        }
+        container.insertAdjacentHTML('beforeend',insert);
+      });
+    });
 };
 
 window.onresize = function () {
