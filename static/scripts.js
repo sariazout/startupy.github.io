@@ -760,7 +760,7 @@ function getAirtable(event) {
 }
 
 function anchorBottomClick() {
-  let heightWindow = window.innerHeight;
+  let heightWindow = document.querySelector('#year-note').offsetTop - 34;
   window.scrollTo({
     top: heightWindow,
     behavior: "smooth",
