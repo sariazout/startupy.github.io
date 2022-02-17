@@ -729,7 +729,7 @@ function getAirtable(event) {
   async function callingFn() {
     try {
       const response = await fetch(
-        "https://v1.nocodeapi.com/dalvenjha/airtable/IWnLKWYrvwtsQelI?tableName=Waitlist",
+        "https://v1.nocodeapi.com/lvelito/airtable/MwKWTDAnnShliUfU?tableName=Waitlist",
         {
           method: "post",
           body: JSON.stringify([{ Email: name, ID: idate }]),
